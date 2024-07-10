@@ -1,0 +1,258 @@
+body,html{
+
+    margin              : 0;
+    padding             : 0;
+    box-sizing          : border-box;
+    font-family         : Arial, Helvetica, sans-serif;
+    height              : 100vh;
+    width               : 100%;
+
+}
+
+main{
+
+    background-color    : #f5f4f1;
+    height              : 100vh;
+    display             : flex;
+    flex-direction      : column;
+
+
+}
+
+h1{
+
+    font-family         : arial;
+    font-weight         : lighter;
+    color               : #67675c;
+    background-color    : #2f3435;
+    padding             : 10px;
+    border-radius       : 10px;
+    box-shadow          : 0px 8px 1px #ff9b3f;
+    margin              : 0;
+    display             : flex;
+    flex-wrap           : nowrap;
+    align-items         : end;
+
+
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 10px;
+    display : block
+}
+
+.subTitle,.orange{
+
+    margin              : 0;
+    color               : orange;
+    margin-top          : 9px;
+
+}
+
+.margedLeft20{
+
+    margin-left : 20px
+
+}
+
+#catHubLogo{
+
+    background-color            : white;
+    background-image            : url(../etc/logos/catHub_web.svg);
+    background-size             : contain;
+    width                       : 115px;
+    height                      : 115px;
+    background-size             : 80%;
+    background-position         : center;
+    background-repeat           : no-repeat;
+    float                       : left;
+    border-radius               : 10px;
+    border-bottom-right-radius  : 0;
+    margin-right                : 10px;
+    cursor                      : pointer;
+
+}
+.catHubLogoPoints{
+
+    background-color            : white;
+    width                       : 35px;
+    height                      : 35px;
+    margin-right                : 10px;
+    float                       : left;
+    border-radius               : 5px;
+    border-bottom-right-radius  : 0;
+   
+}
+
+.scrabbleBox{
+
+    width                       : 100%;
+    background-color            : rgb(255 255 255);
+    color                       : #1d1b1b;
+    font-size                   : medium;
+    overflow                    : scroll;
+    padding                     : 20px 30px;
+    margin                      : 0 10px;
+    line-height                 : 35px;
+    max-height                  : 300px;
+    min-height                  : 150px;
+    display                     : block;
+    word-break                  : break-word;
+    word-wrap                   : break-word;
+    border-radius               : 30px;
+    font-weight                 : bold;
+
+}
+
+.symbol{
+
+    background-color            : transparent;
+    background-size             : contain;
+    width                       : 60px;
+    height                      : 60px;
+    background-size             : 80%;
+    background-position         : center;
+    background-repeat           : no-repeat;
+    float                       : left;
+    border-radius               : 10px;
+    border-bottom-right-radius  : 0;
+    margin-right                : 10px; 
+}
+.ü0{
+    background-image            : url(../etc/chars/ü0_web.svg);
+}
+.mod-{
+    background-image            : url(../etc/symbols/mod.svg);
+}
+.threeFoosInARow{
+
+    display                     : flex;
+    flex-direction              : row;
+    padding: 0 100px;
+
+}
+.threeFoosContainer{
+
+    position                    : relative;
+    width                       : fit-content;
+    align-self                  : center;
+    width                       : 600px;
+    background-color            : #f1eded;
+    box-shadow                  : 18px 71px 1px orange;
+    margin-top                  : 90px ;
+
+}
+
+.threeFoosInnerContainer.top{
+
+    border-left     : 1px solid grey;
+    height          : 330px !important;
+    display         : flex;
+    flex            : auto;
+    align-content   : space-between;
+    margin-bottom   : 0;
+    margin-top      : 0;
+    width           : 180px;
+
+}
+.threeFoosInnerContainer.bottom{
+
+    height              : 180px !important;
+    display             : flex;
+    flex-direction      : row;
+    width               : 600px;
+    justify-content     : center;
+    margin-top          : 0;
+    margin-bottom       :0;
+
+}
+
+.puzzleContainer,.threeFoosInnerContainer{
+
+    margin      :   50px auto;
+    width       :   310px;
+    height      :   310px;
+    display     :   flex;
+    flex-flow   :   wrap;
+    
+
+}
+.fooBox{
+
+    border      : 1px solid grey;
+    padding     : 5px;
+    height      : fit-content;
+    border-left : none;
+    box-shadow  : 15px 10px 1px #dbd4d4;
+    display     : flex;
+
+
+}
+
+.fooBox.margedLeft20{
+
+    border: 1px solid grey
+
+}
+
+.threeFooButton{
+
+    padding             : 10px;
+    background-color    : #2f3435;
+    color               : white;
+    font-size           : x-large;
+    width               : 100%;
+    align-self          : center;
+    z-index             : 9;
+
+}
+
+.scrabbleButtons>input{
+
+    float               : right;
+    background-color    : #849784;
+    border-radius       : 10px;
+    color               : #dfd8d8;
+    padding             : 20px;
+    outline             : white;
+    box-shadow          : 0px 4px 1px #b5b2b2;
+    border              : white
+
+}
+
+.threeFooButton.scrabTheWords{
+
+    background-color            : white;
+    color                       : #2f3435;
+    border-bottom-right-radius  : 5px;
+
+
+}
+
+.getAndVisulisizeValuesContainer{
+
+   display              : flex;
+   flex-flow            : wrap;
+   width                : 300px;
+   align-content        : flex-end;
+
+}
+#visulisizeValues{
+
+    width           :300px;
+    height          :300px;
+    margin          : 20px;
+
+}
+.puzzlePart{
+
+    float: left;
+    margin              :   0 0;
+    width               :   100px;
+    height              :   100px;
+    background-color    : wheat;
+    border              :   1px solid grey;
+}
