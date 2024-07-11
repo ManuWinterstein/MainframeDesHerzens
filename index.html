@@ -52,12 +52,37 @@
             </div>
             <div class="getAndVisulisizeValuesContainer">
                 <input type="button" value="getValues" class="threeFooButton" id="getValueButton"/>
-                <canvas 
-                    id="visualisizeValues" 
-                    style="    
-                        height: 200px;
-                        margin: 20px;" >
-                </canvas>
+                <input type="button" value="getView" class="threeFooButton" id="getViewButton"/>
+                <div class="canvasBox" id="thirdEye">
+                    <div class="canvasLayer">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues1" 
+                            style   ="    
+                                height: 200px;
+                                margin: 20px;" >
+                        </canvas>
+                    </div>
+                    <div class="canvasLayer">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues2" 
+                            style   ="    
+                                height: 200px;
+                                margin: 20px;" >
+                        </canvas>
+                    </div>
+                    <div class="canvasLayer">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues3" 
+                            style   ="    
+                                height: 200px;
+                                margin: 20px;" >
+                        </canvas>
+                    </div>
+                    
+                </div>
             </div>    
             <div class="threeFoosContainer">
                 <h4 class="subTitle orange">What thinks God</h4>
@@ -149,10 +174,11 @@
             
             let tn = [
             
-                tn1   = jule,
+                tn1   = getCharacter( 'chancler'   , 64),
                 tn2   = getCharacter( 'nosen'   , 64),
                 tn3   = getCharacter( 'foolmannn'     , 64),
-                tn4   = mummelkuh
+                tn4   = getCharacter( 'kev'     , 64),
+                
             
             ]      
 
@@ -204,6 +230,51 @@
             return words
 
     }
+
+    function getView( tn , canX, canY, ctx  ){
+
+        const didder = getCharacter( 'didder' )
+
+        const letters = '0123456789ABCDEF';
+
+        let didScrab
+        let tnscrab
+
+        
+
+        for( let i = 0; i <= canX; i++ ){
+           
+            for( let j = 0; j <= canY; j++){
+
+                //for( let a = 0; a <= didder.maxSplits; a++){
+                for( let a = 0; a <= didder.maxSplits; a++){
+                   didScrab = getRanInt( didder.scrabble)
+                   tnScrab  = tn.scrabble
+                    let color ='#'
+                    if( didScrab == tnScrab ){
+                        
+                        //console.log('test')
+                        for(let b = 0; b < 6; b++){
+                         
+                            color += letters[Math.floor(Math.random() * 16)];
+                        
+                        }
+                        
+                        ctx.fillStyle = color
+                        ctx.fillRect( i , j , 2, 2 );
+                            //$('#thirdEye').append('<div style="width:1px;height:1px;background-color:'+color+'">')
+        
+
+                    }
+
+                }
+
+
+            }
+        }
+        return ctx
+    }
+
 
     function delegate( loish, words ){
 
@@ -276,6 +347,30 @@
 
         }) */
 
+        $( '#getViewButton' ).click( function (){
+
+            let canvas = document.getElementById("visualisizeValues1");
+            let ctx1 = canvas.getContext("2d");
+            canvas = document.getElementById("visualisizeValues2");
+            let ctx2 = canvas.getContext("2d");
+            canvas = document.getElementById("visualisizeValues3");
+            let ctx3 = canvas.getContext("2d"); 
+
+            let tn = getCharacter( 'didder' )
+
+            for( let i = 0; i < tn.maxSplits; i++){
+              
+              ctx1 =      getView( tn , 200, 200, ctx1 )
+                    setTimeout( null , 80 )
+                
+              ctx2 =      getView( tn , 200, 200, ctx2 )
+                    setTimeout( null , 80 )
+                
+              ctx3 =      getView( tn , 200, 200, ctx3 )
+                    setTimeout( null , 80 )
+            }
+        })
+
         $( '#getValueButton' ).click( function (){
 
             let c           = 12
@@ -289,7 +384,7 @@
             let achtGod     =  Math.floor( Math.random() * 12 ) + 2
             let aLast,godLast
 
-            const canvas = document.getElementById("visualisizeValues");
+            const canvas = document.getElementById("visualisizeValues1");
             const ctx = canvas.getContext("2d");
 
 
