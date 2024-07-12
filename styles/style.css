@@ -12,7 +12,7 @@ body,html{
 
 main{
 
-    background-color    : #f5f4f1;
+    background-color    : #111f23;
     height              : 100vh;
     display             : flex;
     flex-direction      : column;
@@ -29,7 +29,7 @@ h1{
     background-color    : #2f3435;
     padding             : 10px;
     border-radius       : 10px;
-    box-shadow          : 0px 8px 1px #ff9b3f;
+    box-shadow          : 0px 8px 1px #1205b7;
     margin              : 0;
     display             : flex;
     flex-wrap           : nowrap;
@@ -46,11 +46,17 @@ h1{
     display : block
 }
 
-.subTitle,.orange{
+.subTitle{
 
     margin              : 0;
-    color               : orange;
+    color               : rgb(255, 255, 255);
     margin-top          : 9px;
+    padding             : 5px;
+
+}
+.subTitle.dark{
+
+   color:  rgb(69 63 63)
 
 }
 
@@ -133,18 +139,16 @@ h1{
 
     display                     : flex;
     flex-direction              : row;
-    padding: 0 100px;
+    height                      : 70vh;
+    margin                      : 0 1vw;
+    overflow                    : hidden;
 
 }
 .threeFoosContainer{
 
     position                    : relative;
-    width                       : fit-content;
-    align-self                  : center;
-    width                       : 600px;
     background-color            : #f1eded;
-    box-shadow                  : 18px 71px 1px orange;
-    margin-top                  : 90px ;
+    box-shadow                  : 15px 30px 1px #1205b7;
     overflow                    : hidden;
 
 }
@@ -203,14 +207,22 @@ h1{
 
 .threeFooButton{
 
-    padding             : 10px;
-    background-color    : #2f3435;
-    color               : white;
-    font-size           : x-large;
-    width               : 100%;
-    align-self          : center;
-    z-index             : 9;
+    padding                 : 10px;
+    background-color        : #1205b7;
+    color                   : #f1eded;
+    font-size               : x-large;
+    width                   : 100%;
+    align-self              : center;
+    z-index                 : 9;
+    outline                 : 3px solid #f1eded;
+    border                  : 9px solid #111f23;
+    border-radius           : 50px;
+    margin                  : 10px 30px;
 
+}
+.threeFooButton:hover{
+
+    background-color        : #17ade1;
 }
 
 .scrabbleButtons>input{
