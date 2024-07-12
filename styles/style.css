@@ -6,6 +6,7 @@ body,html{
     font-family         : Arial, Helvetica, sans-serif;
     height              : 100vh;
     width               : 100%;
+    overflow            : auto;
 
 }
 
@@ -15,6 +16,7 @@ main{
     height              : 100vh;
     display             : flex;
     flex-direction      : column;
+    overflow            : auto;
 
 
 }
@@ -143,6 +145,7 @@ h1{
     background-color            : #f1eded;
     box-shadow                  : 18px 71px 1px orange;
     margin-top                  : 90px ;
+    overflow                    : hidden;
 
 }
 
@@ -245,18 +248,17 @@ h1{
 
     position        : relative;
     width           : 500px;
-    height          : 500px;
+    height          : 240px;
 
 }
 
 .canvasLayer
 {
 
-    top             : 200px;
-    left            : 0;
+    top             : 0;
+    left            : 2px;
     width           : 200px;
     height          : 200px;
-    margin          : 20px;
     position        : absolute;
 }
 .puzzlePart{
