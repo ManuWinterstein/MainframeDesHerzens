@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+
+    <title>CatHub</title>
+    
+    <link rel="icon" href="./etc/logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css" >
+  </head>
+  <body>
+    <main>
+            <div class="getAndVisulisizeValuesContainer">
+                <!--input type="button" value="getValues" class="threeFooButton" id="getValueButton"/>
+                <input type="button" value="getView" class="threeFooButton" id="getViewButton"/-->
+                <div class="canvasBox" id="thirdEye">
+                    <div class="canvasLayer">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues1" 
+                            style   ="    
+                                height: 200px;
+                                margin: 20px;" >
+                        </canvas>
+                    </div>
+                    <div class="canvasLayer">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues2" 
+                            style   ="    
+                                height: 200px;
+                                margin: 20px;" >
+                        </canvas>
+                    </div>
+                    <div class="canvasLayer">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues3" 
+                            style   ="    
+                                height: 200px;
+                                margin: 20px;" >
+                        </canvas>
+                    </div>
+                    
+                </div>
+            </div>    
+    </main>
+	
+  </body>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="./js/tools/tools.js"></script>
+  <script src="./js/objects/chars.js"></script>
+  <script src="./js/objects/types.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+  <script>window.jQuery || document.write('<script src="jquery-3.7.1.min.js"><\/script>')
+
+
+    function drawCanvas( ctx, c , j , ü0, acht, dpi , i ){                    
+
+       const letters = '0123456789ABCDEF';
+       let color = '#';
+        
+       for( let a = 0; a < c.length; a++){
+        
+            for (let b = 0; b < 6; b++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            } 
+
+            ctx.fillStyle = color
+            ctx.fillRect( c[ a ] * ( Math.floor( Math.random() * 30 * ü0 / acht ) ) + 2, j[ a ] * ( Math.floor( Math.random() * 18 * acht ) - 3 ), 15, 40 );
+        
+        }
+   
+    }
+
+    function getView( tn , canX, canY, ctx  ){
+
+        const didder = getCharacter( 'didder' )
+
+        const letters = '0123456789ABCDEF';
+
+        let didScrab
+        let tnscrab
+
+        
+
+        for( let i = 0; i <= canX; i++ ){
+           
+            for( let j = 0; j <= canY; j++){
+
+                //for( let a = 0; a <= didder.maxSplits; a++){
+                for( let a = 0; a <= didder.maxSplits; a++){
+                   didScrab = getRanInt( didder.scrabble)
+                   tnScrab  = tn.scrabble
+                    let color ='#'
+                    if( didScrab == tnScrab ){
+                        
+                        //console.log('test')
+                        for(let b = 0; b < 6; b++){
+                         
+                            color += letters[Math.floor(Math.random() * 16)];
+                        
+                        }
+                        
+                        ctx.fillStyle = color
+                        ctx.fillRect( i , j , 2, 2 );
+                            //$('#thirdEye').append('<div style="width:1px;height:1px;background-color:'+color+'">')
+        
+
+                    }
+
+                }
+
+
+            }
+        }
+        return ctx
+    }
+
+
+    /* function delegate( loish, words ){
+
+        //let loish       = 1
+        let ju          = 3
+        let felix       = getCharacter( 'felix' )
+
+        const ätherQ        = 75
+        const homer         = 12
+        const bnd           = 8000
+
+        let letters         = getType( 'lettersLowerCase' )
+        
+        console.log('letters', letters)
+
+        let b               = 0
+        
+        while( b < 12 ){
+
+            for( let a = 0; a < words.length; a++ ){
+               
+                   if( getRanInt( 12 ) == loish || getRanInt( 12 ) == ju ){
+                    
+                                                              
+                           words[a] = letters[ Math.floor( Math.random() * letters.length ) ].toString()
+                           console.log( 'test1',words[a],'=', letters[ Math.floor( Math.random() * letters.length )] )
+
+                    
+                }
+   
+            }
+        
+            if( loish  == getRanInt( ju )){
+             
+                //console.log('test2', felix, words, b )
+                b++
+            
+            }
+        
+        }
+           return words
+    } */
+
+    jQuery(document).ready(function(){
+
+
+
+            let canvas = document.getElementById("visualisizeValues1");
+            let ctx1 = canvas.getContext("2d");
+            canvas = document.getElementById("visualisizeValues2");
+            let ctx2 = canvas.getContext("2d");
+            canvas = document.getElementById("visualisizeValues3");
+            let ctx3 = canvas.getContext("2d"); 
+
+            let tn = getCharacter( 'didder' )
+
+            //for( let i = 0; i < tn.maxSplits; i++){
+            while(true){  
+              ctx1 =      getView( tn , 200, 200, ctx1 )
+                    setTimeout( null , 80 )
+                
+              ctx2 =      getView( tn , 200, 200, ctx2 )
+                    setTimeout( null , 80 )
+                
+              ctx3 =      getView( tn , 200, 200, ctx3 )
+                    setTimeout( null , 80 )
+            }
+     
+
+       
+
+    });
+
+</script>
+</html>
