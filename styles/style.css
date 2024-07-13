@@ -27,7 +27,7 @@ h1{
     font-weight         : lighter;
     color               : #67675c;
     background-color    : #2f3435;
-    padding             : 10px;
+    padding             : 10px 22px;
     border-radius       : 10px;
     box-shadow          : 0px 8px 1px #1205b7;
     margin              : 0;
@@ -105,7 +105,7 @@ h1{
     color                       : #1d1b1b;
     font-size                   : medium;
     padding                     : 20px 30px;
-    margin                      : 0 10px;
+    margin                      : 0;
     line-height                 : 35px;
     max-height                  : 300px;
     min-height                  : 150px;
