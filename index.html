@@ -51,7 +51,9 @@
                 </div>
             </div>
             <div class="getAndVisulisizeValuesContainer">
+                <div id="checkIntegrityValueContainer"></div>
                 <input type="button" value="getValues" class="threeFooButton" id="getValueButton"/>
+                <input type="button" value="checkIntegrity" class="threeFooButton" id="checkIntegrityButton"/>
                 <input type="button" value="getView" class="threeFooButton" id="getViewButton"/>
                 <div class="canvasBox" id="thirdEye">
                     <div class="canvasLayer">
@@ -154,6 +156,31 @@
    
     }
 
+    function checkIntegrity(){
+
+        let sumDices = 0
+
+        for(let i = 0; i < 12; i++){
+
+            let dice = getRanInt(6)
+
+            if( dice == 6 ){
+
+                i--
+
+            }
+
+            sumDices += dice
+
+
+
+        }
+
+        return sumDices
+
+    }
+
+
 
 
     function scrabTheWord(){
@@ -176,7 +203,7 @@
             
                 tn1   = getCharacter( 'mummelkuh'   , 64),
                 tn2   = getCharacter( 'foolmann'   , 64),
-                tn3   = getCharacter( 'chancler'     , 64),
+                tn3   = getCharacter( 'thejoegarl'     , 64),
                 tn4   = getCharacter( 'grenate'     , 64),
                 
             
@@ -373,6 +400,17 @@
               ctx3 =      getView( tn , 200, 200, ctx3 )
                     setTimeout( null , 80 )
             }
+        })
+
+        $( '#checkIntegrityButton' ).click( function(){
+
+            let integrity = checkIntegrity()
+
+            console.log(integrity)
+
+            $( '#checkIntegrityContainer' ).html( integrity )
+
+
         })
 
         $( '#getValueButton' ).click( function (){
