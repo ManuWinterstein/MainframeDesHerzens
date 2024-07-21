@@ -47,14 +47,17 @@
                         <div class="fooBox margedLeft20" ><input type="text" value="" /></div>
                         <div style="height:35%;width:100%"><div style="height:100%;border-right: 1px solid grey;width:50%"></div><div></div></div>
                         <div class="fooBox" style="border-left: 1px solid grey"><div class="symbol mod-"></div><input type="text" id="valueOfFooBottomRight"  disabled/></div>
+                        
                     </div>
+                    
                 </div>
+                <div class="fooBox division" id="divisionOfFooWorld"></div>
             </div>
             <div class="getAndVisulisizeValuesContainer">
                 <div id="checkIntegrityValueContainer"></div>
-                <input type="button" value="getValues" class="threeFooButton" id="getValueButton"/>
-                <input type="button" value="checkIntegrity" class="threeFooButton" id="checkIntegrityButton"/>
-                <input type="button" value="getView" class="threeFooButton" id="getViewButton"/>
+                <input type="button" value="getValues" class="threeFooButton blue" id="getValueButton"/>
+                <input type="button" value="checkIntegrity" class="threeFooButton azur" id="checkIntegrityButton"/>
+                <input type="button" value="getView" class="threeFooButton green" id="getViewButton"/>
                 <div class="canvasBox" id="thirdEye">
                     <div class="canvasLayer">
                         <canvas 
@@ -107,10 +110,13 @@
                     <div class="fooBox margedLeft20"><input type="text" value="" /></div>
                     <div style="height:35%;width:100%"><div style="height:100%;border-right: 1px solid grey;width:50%"></div><div></div></div>
                     <div class="fooBox"><input type="text" id="valueOfFooGod"  disabled/></div>
+                    
                 </div>
+            <div class="fooBox division" id="divisionOfFooGod"></div>
                 
             </div>
         </div>
+        
         <!--div class="puzzleContainer">
             <div class="puzzlePart" id="1a" val="0"></div>
             <div class="puzzlePart" id="1b" val="1"></div>
@@ -127,7 +133,25 @@
             <source src="./etc/clocks/clock1.wav" type="audio/mp3">
           </audio>
     </main>
-	
+	<footer>
+       <div class="charsContainer">
+            <div class="charIcon hapo"></div>
+            <div class="charIcon" evsa></div>
+            <div class="charIcon beat"></div>
+            <div class="charIcon mar"></div>
+            <div class="charIcon cla"></div>
+            <div class="charIcon nik"></div>
+            <div class="charIcon mahan"></div>
+            <div class="charIcon kevd"></div>
+            <div class="charIcon white"></div>
+            <div class="charIcon max"></div>
+            <div class="charIcon ste"></div>
+            <div class="charIcon jos"></div>
+            <div class="charIcon noport"></div>
+            </div>     
+
+
+    </footer>
   </body>
   
   <script src="jquery-3.7.1.min.js"></script>
@@ -156,13 +180,13 @@
    
     }
 
-    function checkIntegrity(){
+    function checkIntegrity( eyes ){
 
         let sumDices = 0
 
         for(let i = 0; i < 12; i++){
 
-            let dice = getRanInt(6)
+            let dice = getRanInt( eyes )
 
             if( dice == 6 ){
 
@@ -404,11 +428,13 @@
 
         $( '#checkIntegrityButton' ).click( function(){
 
-            let integrity = checkIntegrity()
+            let integrity = checkIntegrity( 12 )
+
+            integrity   = 100 - 72 / 100 *  ( integrity - 12 )     
 
             console.log(integrity)
 
-            $( '#checkIntegrityContainer' ).html( integrity )
+            $( '#checkIntegrityValueContainer' ).html( integrity + '%' )
 
 
         })
@@ -487,7 +513,7 @@
                 $('#valueOfFooBottomLeft').val( ü0 )
                 $('#valueOfFooBottomRight').val( '- '+ acht )
                 $('#valueOfFoo').val( a )
-        
+                $( '#divisionOfFooWorld' ).html( a / Number( acht + '.' + ü0 ) )
             
 
             c = 12
@@ -534,7 +560,7 @@
                 $('#valueOfFooBottomLeftGod').val( ü0God )
                 $('#valueOfFooBottomRightGod').val( '- '+ achtGod )
                 $('#valueOfFooGod').val( god )
-        
+                $( '#divisionOfFooGod' ).html( god / Number( achtGod + '.' + ü0God ) )
             
 
             if( aLast == a && godLast == god){
