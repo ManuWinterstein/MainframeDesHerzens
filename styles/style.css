@@ -25,7 +25,7 @@ main{
 }
 footer{
 
-    background-color    : #ef4444;
+    background-color    : #ec3820;
     height              : 10vh;
     display             : flex;
     flex-direction      : column;
@@ -52,6 +52,12 @@ h1{
     align-items         : end;
 
 
+}
+
+a{
+
+    text-decoration: none;
+    
 }
 
 ::-webkit-scrollbar {
@@ -311,12 +317,29 @@ h1{
 
 .charIcon{
 
-    width               : 70px;
-    height              : 70px;
-    border              : 1px solid #8c5858;
-    background-size     : cover;
-    float               :left;
-    background-repeat   : no-repeat;
+    width                       : 70px;
+    height                      : 70px;
+    border                      : 1px solid #8c5858;
+    background-size             : cover;
+    float                       :left;
+    background-repeat           : no-repeat;
+    border-radius               : 10px;
+    border-bottom-right-radius  : 0;
+    box-shadow                  : 4px 5px 2px #111f23;
+}
+
+.charIcon:hover{
+
+outline: 2px double #17e1c6;
+
+
+}
+
+.charIcon:active,.charIcon:checked{
+
+outline: 2px double #17e1c6;
+filter: invert();
+
 }
 
 .charIcon.hapo{
@@ -384,22 +407,40 @@ h1{
     background-image: url(../etc/chars/ste.jpg);
 
 }
+.charIcon.cla{
+
+    background-image: url(../etc/chars/cla.jpg);
+
+}
+.charIcon.nik{
+
+    background-image: url(../etc/chars/nik.jpg);
+
+}
+.charIcon.evsa{
+
+    background-image: url(../etc/chars/evsa.jpg);
+
+}
+.charIcon.beat{
+
+    background-image: url(../etc/chars/beat.jpg);
+
+}
 .canvasBox{
 
-    position        : relative;
-    width           : 500px;
-    height          : 240px;
-    left            : 25%;
+    position: relative;
+    width: 100vw;
+    height: 320px;
+    /* left: 2.5vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .canvasLayer
 {
-
-    top             : 0;
-    left            : 2px;
-    width           : 200px;
-    height          : 200px;
     position        : absolute;
 }
 .puzzlePart{

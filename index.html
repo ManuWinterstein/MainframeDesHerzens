@@ -135,19 +135,19 @@
     </main>
 	<footer>
        <div class="charsContainer">
-            <div class="charIcon hapo"></div>
-            <div class="charIcon" evsa></div>
-            <div class="charIcon beat"></div>
-            <div class="charIcon mar"></div>
-            <div class="charIcon cla"></div>
-            <div class="charIcon nik"></div>
-            <div class="charIcon mahan"></div>
-            <div class="charIcon kevd"></div>
-            <div class="charIcon white"></div>
-            <div class="charIcon max"></div>
-            <div class="charIcon ste"></div>
-            <div class="charIcon jos"></div>
-            <div class="charIcon noport"></div>
+            <a class="charIcon hapo"></a>
+            <a class="charIcon evsa"></a>
+            <a class="charIcon beat"></a>
+            <a class="charIcon mar"></a>
+            <a class="charIcon cla"></a>
+            <a class="charIcon nik"></a>
+            <a class="charIcon mahan"></a>
+            <a class="charIcon kevd"></a>
+            <a class="charIcon white"></a>
+            <a class="charIcon max"></a>
+            <a class="charIcon ste"></a>
+            <a class="charIcon jos"></a>
+            <a class="charIcon noport"></a>
             </div>     
 
 
@@ -225,9 +225,9 @@
             
             let tn = [
             
-                tn1   = getCharacter( 'mummelkuh'   , 64),
-                tn2   = getCharacter( 'foolmann'   , 64),
-                tn3   = getCharacter( 'thejoegarl'     , 64),
+                tn1   = getCharacter( 'didder'   , 64),
+                tn2   = getCharacter( 'nosen'   , 64),
+                tn3   = getCharacter( 'nosen'     , 64),
                 tn4   = getCharacter( 'grenate'     , 64),
                 
             
@@ -379,6 +379,15 @@
         var c = Math.floor(Math.random()*9)
         
         var index = 0;
+
+        $( '.charIcon' ).click( this, function(){
+
+            $( this ).css( 'outline',' 2px solid white' )
+            console.log( 'test' )
+
+        })
+
+
 
         $( '#catHubLogo' ).click( function(){
             
