@@ -17,7 +17,7 @@ container[ 'scrabble' ]                 = [
     ' '
 ]
 
-container[ 'mirroedLettersLowercase' ]  = 'zyxwvutsrqponmlkjihgfdcba%°?(")(">/°= '
+container[ 'mirroedLettersLowercase' ]  = 'zyxwvutsrqponmlkjihgfdcba'
 container[ 'lettersLowerCase' ]         = 'abcdefghijklmnopqrstuvwxyz%°?(")(">/°= '
 container[ 'letticons' ]                = [ 'U`P' , '%°?' , '/°°>' , '(">' , '/°=' , '(")' , '§%;' , '|°°;' , '|°!°|' ]
 
