@@ -94,7 +94,7 @@ a{
 #catHubLogo{
 
     background-color            : white;
-    background-image            : url(../etc/logos/catHub_web.svg);
+    background-image            : url(../tcRes/logos/catHub_web.svg);
     background-size             : contain;
     width                       : 115px;
     height                      : 115px;
@@ -155,10 +155,10 @@ a{
     margin-right                : 10px; 
 }
 .ü0{
-    background-image            : url(../etc/chars/ü0_web.svg);
+    background-image            : url(../tcRes/chars/ü0_web.svg);
 }
 .mod-{
-    background-image            : url(../etc/symbols/mod.svg);
+    background-image            : url(../tcRes/symbols/mod.svg);
 }
 .threeFoosInARow{
 
@@ -344,87 +344,87 @@ filter: invert();
 
 .charIcon.hapo{
 
-    background-image: url(../etc/chars/hapo.jpg);
+    background-image: url(../tcRes/chars/hapo.jpg);
 
 }
 .charIcon.hapo{
 
-    background-image: url(../etc/chars/hapo.jpg);
+    background-image: url(../tcRes/chars/hapo.jpg);
 
 }
 .charIcon.hapo{
 
-    background-image: url(../etc/chars/hapo.jpg);
+    background-image: url(../tcRes/chars/hapo.jpg);
 
 }
 .charIcon.hapo{
 
-    background-image: url(../etc/chars/hapo.jpg);
+    background-image: url(../tcRes/chars/hapo.jpg);
 
 }
 .charIcon.hapo{
 
-    background-image: url(../etc/chars/hapo.jpg);
+    background-image: url(../tcRes/chars/hapo.jpg);
 
 }
 .charIcon.kevd{
 
-    background-image: url(../etc/chars/kevd.jpg);
+    background-image: url(../tcRes/chars/kevd.jpg);
 
 }
 .charIcon.mahan{
 
-    background-image: url(../etc/chars/mahan.jpg);
+    background-image: url(../tcRes/chars/mahan.jpg);
 
 }
 .charIcon.max{
 
-    background-image: url(../etc/chars/max.jpg);
+    background-image: url(../tcRes/chars/max.jpg);
 
 }
 .charIcon.mar{
 
-    background-image: url(../etc/chars/mar.jpg);
+    background-image: url(../tcRes/chars/mar.jpg);
 
 }
 .charIcon.jos{
 
-    background-image: url(../etc/chars/jos.jpg);
+    background-image: url(../tcRes/chars/jos.jpg);
 
 }
 .charIcon.white{
 
-    background-image: url(../etc/chars/white.jpg);
+    background-image: url(../tcRes/chars/white.jpg);
 
 }
 .charIcon.noport{
 
-    background-image: url(../etc/chars/noport.jpg);
+    background-image: url(../tcRes/chars/noport.jpg);
 
 }
 .charIcon.ste{
 
-    background-image: url(../etc/chars/ste.jpg);
+    background-image: url(../tcRes/chars/ste.jpg);
 
 }
 .charIcon.cla{
 
-    background-image: url(../etc/chars/cla.jpg);
+    background-image: url(../tcRes/chars/cla.jpg);
 
 }
 .charIcon.nik{
 
-    background-image: url(../etc/chars/nik.jpg);
+    background-image: url(../tcRes/chars/nik.jpg);
 
 }
 .charIcon.evsa{
 
-    background-image: url(../etc/chars/evsa.jpg);
+    background-image: url(../tcRes/chars/evsa.jpg);
 
 }
 .charIcon.beat{
 
-    background-image: url(../etc/chars/beat.jpg);
+    background-image: url(../tcRes/chars/beat.jpg);
 
 }
 .canvasBox{
