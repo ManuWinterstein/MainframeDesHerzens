@@ -161,6 +161,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
   <script>window.jQuery || document.write('<script src="jquery-3.7.1.min.js"><\/script>')
 
+    let focus = false
 
     function drawCanvas( ctx, c , j , ü0, acht, dpi , i ){                    
 
@@ -203,9 +204,26 @@
         return sumDices
 
     }
+    
+    let nnTimeCreditInc = 0
+
+    function nnTimeCredit(){
+        
+        try{
+
+            let html = ''
+
+            for(let i = 0; i < 3; i++){
+
+                html.length < 10000 ? html += 'nnTimeCredit' : html = 'slap'
+                $( '.scrabbleBox' ).append(html)
 
 
-
+            }
+           focus ? nnTimeCredit() : $( '.scrabbleBox' ).html( 'goldenSimpson' )
+        }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' ); if( nnTimeCreditInc < 1){ nnTimeCredit(); nnTimeCreditInc++ }else{ nnTimeCreditInc = 0 } }
+    }
+    
 
     function scrabTheWord(){
 
@@ -390,7 +408,13 @@
 
         })
 
+        $( '.jos' ).on( 'click', function(){
 
+            focus = !focus
+            nnTimeCredit()
+
+
+        })
 
         $( '#catHubLogo' ).click( function(){
             
