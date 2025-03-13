@@ -224,6 +224,23 @@
         }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' ); if( nnTimeCreditInc < 1){ nnTimeCredit(); nnTimeCreditInc++ }else{ nnTimeCreditInc = 0 } }
     }
     
+    function volleBulle(){
+        
+        try{
+
+            let html = ''
+
+            for(let i = 0; i < 3; i++){
+
+                html.length < 10000 ? html += 'mach doch einfach volle Bulle' : html = 'slap'
+                $( '.scrabbleBox' ).append(html)
+
+
+            }
+           focus ? nnTimeCredit() : $( '.scrabbleBox' ).html( 'goldenSimpson' )
+        }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' ); if( nnTimeCreditInc < 1){ volleBulle(); nnTimeCreditInc++ }else{ nnTimeCreditInc = 0 } }
+    }
+    
 
     function scrabTheWord(){
 
@@ -411,7 +428,7 @@
         $( '.jos' ).on( 'click', function(){
 
             focus = !focus
-            nnTimeCredit()
+            volleBulle()
 
 
         })
