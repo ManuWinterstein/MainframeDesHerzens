@@ -223,7 +223,7 @@
            focus ? nnTimeCredit() : $( '.scrabbleBox' ).html( 'goldenSimpson' )
         }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' ); if( nnTimeCreditInc < 1){ nnTimeCredit(); nnTimeCreditInc++ }else{ nnTimeCreditInc = 0 } }
     }
-    
+    let j = 0
     function volleBulle(){
         
         try{
@@ -231,14 +231,16 @@
             let html = ''
 
             for(let i = 0; i < 3; i++){
-
-                html.length < 10000 ? html += 'mach doch einfach volle Bulle' : html = 'slap'
-                $( '.scrabbleBox' ).append(html)
+                
+                //new Date()
+                html.length < 10000 ? html += 'mach doch einfach volle Pulle nntCredit paradiesstr. 36 and all there tn pay your depts in the name of markus söder triggershit' : html = 'slap'
+                $( '.scrabbleBox' ).html(html)
 
 
             }
-           focus ? nnTimeCredit() : $( '.scrabbleBox' ).html( 'goldenSimpson' )
-        }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' ); if( nnTimeCreditInc < 1){ volleBulle(); nnTimeCreditInc++ }else{ nnTimeCreditInc = 0 } }
+            j++
+            j < 100000000 ? volleBulle() : j = 0
+        }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' )    }
     }
     
 
