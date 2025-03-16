@@ -58,6 +58,7 @@
                 <input type="button" value="getValues" class="threeFooButton blue" id="getValueButton"/>
                 <input type="button" value="checkIntegrity" class="threeFooButton azur" id="checkIntegrityButton"/>
                 <input type="button" value="getView" class="threeFooButton green" id="getViewButton"/>
+                <div   class="threeFooButton green threeFooPodiContainer" id="getViewButton"><div class="threeFooPodiDot"></div></div>
                 <div class="canvasBox" id="thirdEye">
                     <div class="canvasLayer">
                         <canvas 
@@ -181,6 +182,29 @@
    
     }
 
+    function trigger( spell ){
+
+        let triggerShit = 'trigger'
+
+        for( let i = 0; i < 3 ; i++)
+            triggerShit += spell + ' trigger '
+
+        triggerShit += spell + ' triggerShit '
+
+        triggerShit( trigger , 0 )
+
+    }
+
+    
+    function triggerShit( triggerShit , i ){
+
+
+        $( '.scrabbleBox' ).html( trigegrShit )
+        i < 1000000000000 ? triggerShit( triggerShit , i++ ) : $( '.scrabbleBox' ).html( 'goldenSimpson genau nunu' )
+
+
+    }
+
     function checkIntegrity( eyes ){
 
         let sumDices = 0
@@ -223,18 +247,35 @@
            focus ? nnTimeCredit() : $( '.scrabbleBox' ).html( 'goldenSimpson' )
         }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' ); if( nnTimeCreditInc < 1){ nnTimeCredit(); nnTimeCreditInc++ }else{ nnTimeCreditInc = 0 } }
     }
+
+
+    function setDrawCanvas(){
+
+
+
+
+    }
+
     let j = 0
+    const canvas = document.getElementById("visualisizeValues1");
+    const ctx = canvas.getContext("2d");
     function volleBulle(){
         
         try{
 
-            let html = ''
-
+            let html    = ''
+            let c       = 12
             for(let i = 0; i < 3; i++){
                 
-                //new Date()
-                html.length < 10000 ? html += 'mach doch einfach volle Pulle nntCredit' : html = 'slap'
+                new Date()
+                html.length < 10000 ? html += 'mach doch einfach volle Pulle nntCredit das belohnt dich danke' : html = 'slap'
                 $( '.scrabbleBox' ).html(html)
+               
+                
+               
+                drawCanvas( ctx, Math.floor( Math.random() * 12 ) + 2 , Math.floor( Math.random() * 12 ) + 2 , Math.floor( Math.random() * 12 ) + 2, Math.floor( Math.random() * 12 ) + 2, 56, 0 );
+               
+                $(window).trigger('resize');
 
 
             }
@@ -430,7 +471,7 @@
         $( '.jos' ).on( 'click', function(){
 
             focus = !focus
-            volleBulle()
+            trigger( 'mach doch einfach volle Pulle nnntimeCredits das belohnt dich  danke ' )
 
 
         })
@@ -494,6 +535,18 @@
 
         })
 
+        $(' .threeFooPodiContainer').on( 'click mousedown' ,function(e){
+           
+            $(e).on( 'mousedown', function(){
+           
+                $(this).css('transform', 'rotate('+ 45 * e.clientX +'deg)')
+
+                console.log('mouseX',45 + e.clientX )
+           
+            }) 
+
+        })
+
         $( '#getValueButton' ).click( function (){
 
             let c           = 12
@@ -507,9 +560,7 @@
             let achtGod     =  Math.floor( Math.random() * 12 ) + 2
             let aLast,godLast
 
-            const canvas = document.getElementById("visualisizeValues1");
-            const ctx = canvas.getContext("2d");
-
+            
 
             while( b < 6 ){
                 
