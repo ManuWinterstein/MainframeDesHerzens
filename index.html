@@ -94,6 +94,7 @@
                 <div id="checkIntegrityValueContainer"></div>
                 <input type="button" value="getValues" class="threeFooButton blue" id="getValueButton"/>
                 <input type="button" value="checkIntegrity" class="threeFooButton azur" id="checkIntegrityButton"/>
+                <input type="button" value="throwDice" class="threeFooButton azur" id="throwDiceButton"/>
                 <input type="button" value="getView" class="threeFooButton green" id="getViewButton"/>
                 <!--div   class="threeFooButton green threeFooPodiContainer" id="getViewButton"><div class="threeFooPodiDot"></div></div-->
                
@@ -190,18 +191,63 @@
    
     }
 
-    function trigger( spell , pulle , margottel ){
+    
+    let countDicing = 0
+    let countSameDice = 0
+    let decUValue = '0'
+    let dice = ''
+    function dicing( mod ){
 
-        let triggerShit = 'trigger'
+        let uValue = 0
 
-        for( let i = 0; i < 3 ; i++)
-            triggerShit += spell + pulle ? 'mach doch einfach volle pulle' : '' + margottel ? 'ich bin das margottel' : '' + 'trigger'
+        let sw = 0
+        let swTo0 = 0
+        
+        let sek =  new Date().getMilliseconds() 
+        
+        sek = sek%12
 
-        triggerShit += spell + ' triggerShit '
+        console.log(sek)
 
-        triggerShit( trigger , 0 )
+        countDicing++
 
+        //sek = sek.slice(1,2)   
+        
+        uValue = countDicing 
+        
+        //console.log(uValue^6,decUValue^6)
+        
+        if( sek == 5 || sek == 11 ){
+
+            uValue = String(uValue).slice(String(uValue).length - 3 , 4 ) 
+            console.log('uValue' , uValue , decUValue )
+            if(uValue == decUValue){
+                 countSameDice++ }else{ decUValue = uValue; countSameDice = 0 } 
+
+        }
+
+
+       
+
+      
+        
+        if( countSameDice == 3 ){
+            
+            countDicing = 0
+            countSameDice = 1
+            dice = Number( uValue ) + 1     
+
+        }
+        else{
+
+            dicing()
+
+        }
+
+        
     }
+
+
 
     
     function triggerShit( triggerShit , i ){
@@ -210,6 +256,19 @@
         $( '.scrabbleBox' ).html( triggerShit )
         i < 1000000000000 ? triggerShit( triggerShit , i++ ) : $( '.scrabbleBox' ).html( 'goldenSimpson genau nunu' )
 
+
+    }
+
+    function trigger( spell , pulle , margottel ){
+
+        let triggerShit = 'trigger'
+
+        for( let i = 0; i < 3 ; i++){
+            triggerShit += spell + pulle ? 'mach doch einfach volle pulle' : '' + margottel ? 'ich bin das margottel' : '' + 'trigger'
+        } 
+        triggerShit += spell + ' triggerShit '
+
+        triggerShit( triggerShit , 0 )
 
     }
 
@@ -237,62 +296,8 @@
 
     }
     
-    let nnTimeCreditInc = 0
-
-    function nnTimeCredit(){
-        
-        try{
-
-            let html = ''
-
-            for(let i = 0; i < 3; i++){
-
-                html.length < 10000 ? html += 'nnTimeCredit' : html = 'slap'
-                $( '.scrabbleBox' ).append(html)
-
-
-            }
-           focus ? nnTimeCredit() : $( '.scrabbleBox' ).html( 'goldenSimpson' )
-        }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' ); if( nnTimeCreditInc < 1){ nnTimeCredit(); nnTimeCreditInc++ }else{ nnTimeCreditInc = 0 } }
-    }
-
-
-    function setDrawCanvas(){
-
-
-
-
-    }
-
-    let j = 0
-    const canvas = document.getElementById("visualisizeValues1");
-    const ctx = canvas.getContext("2d");
-    function volleBulle(){
-        
-        try{
-
-            let html    = ''
-            let c       = 12
-            for(let i = 0; i < 3; i++){
-                
-                new Date()
-                html.length < 10000 ? html += 'mach doch einfach volle Pulle nntCredit das belohnt dich danke' : html = 'slap'
-                $( '.scrabbleBox' ).html(html)
-               
-                
-               
-                drawCanvas( ctx, Math.floor( Math.random() * 12 ) + 2 , Math.floor( Math.random() * 12 ) + 2 , Math.floor( Math.random() * 12 ) + 2, Math.floor( Math.random() * 12 ) + 2, 56, 0 );
-               
-                $(window).trigger('resize');
-
-
-            }
-            j++
-            j < 100000000 ? volleBulle() : j = 0
-        }catch(e){ $( '.scrabbleBox' ).html( 'triggerShit genau nu nu' )    }
-    }
     
-
+        
     function scrabTheWord(){
 
         const letters       = getType( 'mirroedLettersLowerCase' )
@@ -325,7 +330,7 @@
             tn.forEach(ü0 => {
                         
                     for( acht = 0 ; acht < ü0.scrabble ; acht++){
-                     
+                        //$( '.ste' ).click()
                         words +=  scrabble[ getRanInt( scrabble.length ) ]
                     
                     }
@@ -387,17 +392,20 @@
             for( let j = 0; j <= canY; j++){
 
                 //for( let a = 0; a <= didder.maxSplits; a++){
-                for( let a = 0; a <= didder.maxSplits; a++){
+            for( let a = 0; a <= didder.maxSplits; a++){
                    didScrab = getRanInt( didder.scrabble)
                    tnScrab  = tn.scrabble
                     let color ='#'
-                    if( didScrab == tnScrab ){
+                 if( didScrab == tnScrab ){
                         
                         //console.log('test')
                         for(let b = 0; b < 6; b++){
-                         
-                            color += letters[Math.floor(Math.random() * 16)];
-                        
+                            
+                            
+                            color += letters[Math.floor(Math.random() * 12)];
+                            //color += letters[dicing()];
+                            
+
                         }
                         
                         ctx.fillStyle = color
@@ -553,6 +561,19 @@
             console.log(integrity)
 
             $( '#checkIntegrityValueContainer' ).html( integrity + '%' )
+
+
+        })
+
+        $( '#throwDiceButton' ).click( function(){
+
+            let integrity = dicing( 12 )
+
+            //integrity   = 100 - 72 / 100 *  ( integrity - 12 )     
+
+            console.log('throw dice', dice )
+
+            $( '#checkIntegrityValueContainer' ).html( dice )
 
 
         })
