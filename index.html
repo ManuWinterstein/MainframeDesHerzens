@@ -54,19 +54,17 @@
                 <div class="fooBox division" id="divisionOfFooWorld"></div>
             </div>
             <div class="getAndVisulisizeValuesContainer">
-                <div id="checkIntegrityValueContainer"></div>
-                <input type="button" value="getValues" class="threeFooButton blue" id="getValueButton"/>
-                <input type="button" value="checkIntegrity" class="threeFooButton azur" id="checkIntegrityButton"/>
-                <input type="button" value="getView" class="threeFooButton green" id="getViewButton"/>
-                <div   class="threeFooButton green threeFooPodiContainer" id="getViewButton"><div class="threeFooPodiDot"></div></div>
-                <div class="canvasBox" id="thirdEye">
+                <div class="canvasBox" id="thirdEye" style="background-color: white;">
                     <div class="canvasLayer">
                         <canvas 
                             class   ="visualisizeCanvas"
                             id      ="visualisizeValues1" 
                             style   ="    
-                                height: 200px;
-                                margin: 20px;" >
+                                height      : 300px;
+                                position    : relative;
+                                left        : 110px;
+                                opacity     : 0.33;
+                                ">
                         </canvas>
                     </div>
                     <div class="canvasLayer">
@@ -74,8 +72,10 @@
                             class   ="visualisizeCanvas"
                             id      ="visualisizeValues2" 
                             style   ="    
-                                height: 200px;
-                                margin: 20px;" >
+                                height      : 300px;
+                                position    : relative;
+                                left        : 110px;
+                                opacity     : 0.33;" >
                         </canvas>
                     </div>
                     <div class="canvasLayer">
@@ -83,12 +83,20 @@
                             class   ="visualisizeCanvas"
                             id      ="visualisizeValues3" 
                             style   ="    
-                                height: 200px;
-                                margin: 20px;" >
+                                height      : 300px;
+                                position    : relative;
+                                left        : 110px;
+                                opacity     : 0.33;" >
                         </canvas>
                     </div>
                   <!--iframe src="./visionOfView.html" width="200" height="200"></iframe-->  
                 </div>
+                <div id="checkIntegrityValueContainer"></div>
+                <input type="button" value="getValues" class="threeFooButton blue" id="getValueButton"/>
+                <input type="button" value="checkIntegrity" class="threeFooButton azur" id="checkIntegrityButton"/>
+                <input type="button" value="getView" class="threeFooButton green" id="getViewButton"/>
+                <!--div   class="threeFooButton green threeFooPodiContainer" id="getViewButton"><div class="threeFooPodiDot"></div></div-->
+               
             </div>    
             <div class="threeFoosContainer">
                 <h4 class="subTitle dark">What thinks God</h4>
@@ -146,8 +154,8 @@
             <a class="charIcon kevd"></a>
             <a class="charIcon white"></a>
             <a class="charIcon max"></a>
-            <a class="charIcon ste"></a>
-            <a class="charIcon jos"></a>
+            <a class="charIcon ste" id="ste" ></a>
+            <a class="charIcon jos" id="jos" ></a>
             <a class="charIcon noport"></a>
             </div>     
 
@@ -182,12 +190,12 @@
    
     }
 
-    function trigger( spell ){
+    function trigger( spell , pulle , margottel ){
 
         let triggerShit = 'trigger'
 
         for( let i = 0; i < 3 ; i++)
-            triggerShit += spell + ' trigger '
+            triggerShit += spell + pulle ? 'mach doch einfach volle pulle' : '' + margottel ? 'ich bin das margottel' : '' + 'trigger'
 
         triggerShit += spell + ' triggerShit '
 
@@ -199,7 +207,7 @@
     function triggerShit( triggerShit , i ){
 
 
-        $( '.scrabbleBox' ).html( trigegrShit )
+        $( '.scrabbleBox' ).html( triggerShit )
         i < 1000000000000 ? triggerShit( triggerShit , i++ ) : $( '.scrabbleBox' ).html( 'goldenSimpson genau nunu' )
 
 
@@ -468,10 +476,24 @@
 
         })
 
-        $( '.jos' ).on( 'click', function(){
+        $( '#jos' ).on( 'click', function(){
 
             focus = !focus
-            trigger( 'mach doch einfach volle Pulle nnntimeCredits das belohnt dich  danke ' )
+            trigger( 'mach doch einfach volle Pulle mach doch einfach volle Pulle mach doch einfach volle Pulle tut Buße mongo and the mongodevil nntimecredit nnntimecredit ich bin das margottel das belohnt dich  danke' , true , true )
+
+
+        })
+        $( '#ste' ).on( 'click', function(){
+
+            focus = !focus
+            trigger( 'again again again and again' , false , false )
+
+
+        })
+        $( '#kev' ).on( 'click', function(){
+
+            focus = !focus
+            trigger( 'mongo and the mongodevil' , true , true  )
 
 
         })

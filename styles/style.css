@@ -451,7 +451,7 @@ filter: invert();
 
     position: relative;
     width: 100vw;
-    height: 225x;
+    height: 300px;
     /* left: 2.5vw; */
     display: flex;
     justify-content: center;
