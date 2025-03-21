@@ -195,70 +195,71 @@
     let countDicing = 0
     let countSameDice = 0
     let decUValue = '0'
-    let dice = ''
+    let dice = []
     let diceNumber = 0
-    function dicing( mod ){
-
-        let uValue = 0
-
-        let sw = 0
-        let swTo0 = 0
-        
-        let sek     =  new Date().getMilliseconds() 
-        let t       =  String(new Date().getTime()) 
-        
-        let t1      =   t.slice(t.length - 4 , t.length -3 ) 
-        let t2      =   t.slice(t.length - 3 , t.length -2 ) 
-        let t3      =   t.slice(t.length - 2 , t.length -1 ) 
-
-
-
-        sek = sek%12
-
-        console.log(  t1 , t2 , t3 )
-
-        countDicing++
-
-        //sek = sek.slice(1,2)   
-        
-        uValue = countDicing 
-        
-        //console.log(uValue^6,decUValue^6)
-        
-        if( sek == 11 ){
-
-            uValue = String(uValue).slice(String(uValue).length - 3 , String(uValue).length - 1 ) 
+ 
+        function dicing( mod ){
             
-            console.log( 'uValue' , uValue )
+                let uValue = 0
 
-            if(uValue == decUValue){
-                 countSameDice++ }else{ decUValue = uValue; countSameDice = 0 } 
+                let sw = 0
+                let swTo0 = 0
+                
+                let sek     =  new Date().getMilliseconds() 
+                let t       =  String(new Date().getTime()) 
+                
+                let t1      =   t.slice(t.length - 4 , t.length -3 ) 
+                let t2      =   t.slice(t.length - 3 , t.length -2 ) 
+                let t3      =   t.slice(t.length - 2 , t.length -1 ) 
 
-        }
 
 
-       
+                sek = sek%12
 
-      
-        
-        if( countSameDice == 6 ){
+                console.log(  t1 , t2 , t3 )
+
+                countDicing++
+
+                //sek = sek.slice(1,2)   
+                
+                uValue = countDicing 
+                
+                //console.log(uValue^6,decUValue^6)
+                
+                if( sek == 11 ){
+
+                    uValue = String(uValue).slice(String(uValue).length - 3 , String(uValue).length - 1 ) 
+                    
+                    console.log( 'uValue' , uValue )
+
+                    if(uValue == decUValue){
+                        countSameDice++ }else{ decUValue = uValue; countSameDice = 0 } 
+
+                }
+
+
             
-            diceNumber = countDicing
 
-            countDicing = 0
-            countSameDice = 1
             
-            dice = Number( uValue ) + 1     
+                
+                if( countSameDice == 6 ){
+                    
+                    diceNumber = countDicing
 
+                    countDicing = 0
+                    countSameDice = 1
+                    
+                    dice.push(Number( uValue ) + 1)     
+
+                }
+                else{
+
+                    dicing()
+
+                }
         }
-        else{
-
-            dicing()
-
-        }
-
         
-    }
+   
 
 
 
@@ -497,10 +498,10 @@
 
         })
 
-        $( '#jos' ).on( 'click mouseover', function(){
+        $( '#jos' ).on( 'mousedown', function(){
             $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
-            trigger( 'mach doch einfach volle Pulle mach doch einfach volle Pulle mach doch einfach volle Pulle tut Buße mongo and the mongodevil nntimecredit  watchTimecode nnntimecredit ich bin das margottel das belohnt dich  danke' , true , true )
+            trigger( 'mach doch einfach volle Pulle mach doch einfach volle Pulle mach doch einfach volle Pulle geschwindigkeit tut Buße mongo and the mongodevil nntimecredit  watchTimecode nnntimecredit ich bin das margottel das belohnt dich  danke' , true , true )
 
 
         })
@@ -585,36 +586,30 @@
 
         $( '#throwDiceButton' ).click( function(){
 
+            if( $('.lastDiceThrow').html() != 'NaN'){
+
+                dice = []
+
+
+            }
+            
+
             let lastDice = 0
             let c = 0
             let a = true 
             let b = !a
 
             $( '.scrabbleBox' ).html( new Date().getTime() )
-
-            //while(a != b ){
+           
             
             dicing( 12 )
-
+            
+                   
             let integrity = checkIntegrity(12)
-
+                        
+            $( '#checkIntegrityValueContainer' ).html( ( (dice[0] ) + 1 ) + ' -- ' + ( (dice[1] % 12) + 1 ) + ' -- <span class="diceThrow lastDiceThrow">' + ( (dice[2] % 12 ) + 1 ) + '</span> -- ' + integrity + '% -- ' + diceNumber + ' -- ' + new Date().getTime() )
             
             
-            /* if( lastDice == dice )    
-                c++
-            if( c == 8){
-
-                c = 0
-                b = a
-
-            } */    
-
-            //}
-
-
-
-            $( '#checkIntegrityValueContainer' ).html( ( (dice % 12) + 1 ) + ' -- ' + integrity + '% -- ' + diceNumber + ' -- ' + new Date().getTime() )
-
 
         })
 
