@@ -196,6 +196,7 @@
     let countSameDice = 0
     let decUValue = '0'
     let dice = ''
+    let diceNumber = 0
     function dicing( mod ){
 
         let uValue = 0
@@ -203,11 +204,18 @@
         let sw = 0
         let swTo0 = 0
         
-        let sek =  new Date().getMilliseconds() 
+        let sek     =  new Date().getMilliseconds() 
+        let t       =  String(new Date().getTime()) 
         
+        let t1      =   t.slice(t.length - 4 , t.length -3 ) 
+        let t2      =   t.slice(t.length - 3 , t.length -2 ) 
+        let t3      =   t.slice(t.length - 2 , t.length -1 ) 
+
+
+
         sek = sek%12
 
-        console.log(sek)
+        console.log(  t1 , t2 , t3 )
 
         countDicing++
 
@@ -217,10 +225,12 @@
         
         //console.log(uValue^6,decUValue^6)
         
-        if( sek == 5 || sek == 11 ){
+        if( sek == 11 ){
 
-            uValue = String(uValue).slice(String(uValue).length - 3 , 4 ) 
-            console.log('uValue' , uValue , decUValue )
+            uValue = String(uValue).slice(String(uValue).length - 3 , String(uValue).length - 1 ) 
+            
+            console.log( 'uValue' , uValue )
+
             if(uValue == decUValue){
                  countSameDice++ }else{ decUValue = uValue; countSameDice = 0 } 
 
@@ -231,10 +241,13 @@
 
       
         
-        if( countSameDice == 3 ){
+        if( countSameDice == 6 ){
             
+            diceNumber = countDicing
+
             countDicing = 0
             countSameDice = 1
+            
             dice = Number( uValue ) + 1     
 
         }
@@ -484,22 +497,24 @@
 
         })
 
-        $( '#jos' ).on( 'click', function(){
-
+        $( '#jos' ).on( 'click mouseover', function(){
+            $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
-            trigger( 'mach doch einfach volle Pulle mach doch einfach volle Pulle mach doch einfach volle Pulle tut Buße mongo and the mongodevil nntimecredit nnntimecredit ich bin das margottel das belohnt dich  danke' , true , true )
+            trigger( 'mach doch einfach volle Pulle mach doch einfach volle Pulle mach doch einfach volle Pulle tut Buße mongo and the mongodevil nntimecredit  watchTimecode nnntimecredit ich bin das margottel das belohnt dich  danke' , true , true )
 
 
         })
         $( '#ste' ).on( 'click', function(){
 
+            $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
             trigger( 'again again again and again' , false , false )
 
 
         })
         $( '#kev' ).on( 'click', function(){
-
+            
+            $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
             trigger( 'mongo and the mongodevil' , true , true  )
 
@@ -530,6 +545,7 @@
 
         $( '#getViewButton' ).click( function (){
 
+            $( '.scrabbleBox' ).html( new Date().getTime() )
             let canvas = document.getElementById("visualisizeValues1");
             let ctx1 = canvas.getContext("2d");
             canvas = document.getElementById("visualisizeValues2");
@@ -554,6 +570,8 @@
 
         $( '#checkIntegrityButton' ).click( function(){
 
+            $( '.scrabbleBox' ).html( new Date().getTime() )
+
             let integrity = checkIntegrity( 12 )
 
             integrity   = 100 - 72 / 100 *  ( integrity - 12 )     
@@ -567,13 +585,35 @@
 
         $( '#throwDiceButton' ).click( function(){
 
-            let integrity = dicing( 12 )
+            let lastDice = 0
+            let c = 0
+            let a = true 
+            let b = !a
 
-            //integrity   = 100 - 72 / 100 *  ( integrity - 12 )     
+            $( '.scrabbleBox' ).html( new Date().getTime() )
 
-            console.log('throw dice', dice )
+            //while(a != b ){
+            
+            dicing( 12 )
 
-            $( '#checkIntegrityValueContainer' ).html( dice )
+            let integrity = checkIntegrity(12)
+
+            
+            
+            /* if( lastDice == dice )    
+                c++
+            if( c == 8){
+
+                c = 0
+                b = a
+
+            } */    
+
+            //}
+
+
+
+            $( '#checkIntegrityValueContainer' ).html( ( (dice % 12) + 1 ) + ' -- ' + integrity + '% -- ' + diceNumber + ' -- ' + new Date().getTime() )
 
 
         })
