@@ -532,6 +532,14 @@
 
 
         })
+        $( '.mahan' ).on( 'click mousedown', function(){
+            
+            $( '.scrabbleBox' ).html( new Date().getTime() )
+            focus = !focus
+            trigger( 'i die' , true , true  )
+
+
+        })
 
         $( '#catHubLogo' ).click( function(){
             
