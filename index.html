@@ -152,7 +152,7 @@
             <a class="charIcon cla"></a>
             <a class="charIcon nik"></a>
             <a class="charIcon mahan"></a>
-            <a class="charIcon kevd"></a>
+            <a class="charIcon kev"></a>
             <a class="charIcon white"></a>
             <a class="charIcon max"></a>
             <a class="charIcon ste" id="ste" ></a>
@@ -226,7 +226,7 @@
                 
                 //console.log(uValue^6,decUValue^6)
                 
-                if( sek == 11 ){
+                if( sek == 0 ){
 
                     uValue = String(uValue).slice(String(uValue).length - 3 , String(uValue).length - 1 ) 
                     
@@ -498,14 +498,15 @@
 
         })
 
-        $( '#jos' ).on( 'mousedown', function(){
+        $( '.jos' ).on( 'click mousedown', function(){
+            
             $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
-            trigger( 'mach doch einfach volle Pulle mach doch einfach volle Pulle mach doch einfach volle Pulle geschwindigkeit tut Buße mongo and the mongodevil nntimecredit  watchTimecode nnntimecredit ich bin das margottel das belohnt dich  danke' , true , true )
+            trigger( 'mach doch einfach volle Pulle Geschwindigkeit fractionmode tut Buße mongo and the mongodevil noise reduction treshhold watchTimecode nntimecredit ich bin das margottel das belohnt dich  danke frackingmode' , true , true )
 
 
         })
-        $( '#ste' ).on( 'click', function(){
+        $( '.ste' ).on( 'click mousedown', function(){
 
             $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
@@ -513,11 +514,21 @@
 
 
         })
-        $( '#kev' ).on( 'click', function(){
+        
+        $( '.kev' ).on( 'click mousedown', function(){
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
             trigger( 'mongo and the mongodevil' , true , true  )
+
+
+        })
+        
+        $( '.white' ).on( 'click mousedown', function(){
+            
+            $( '.scrabbleBox' ).html( new Date().getTime() )
+            focus = !focus
+            trigger( 'i die' , true , true  )
 
 
         })
@@ -607,7 +618,7 @@
                    
             let integrity = checkIntegrity(12)
                         
-            $( '#checkIntegrityValueContainer' ).html( ( (dice[0] ) + 1 ) + ' -- ' + ( (dice[1] % 12) + 1 ) + ' -- <span class="diceThrow lastDiceThrow">' + ( (dice[2] % 12 ) + 1 ) + '</span> -- ' + integrity + '% -- ' + diceNumber + ' -- ' + new Date().getTime() )
+            $( '#checkIntegrityValueContainer' ).html( ( (dice[0] ) + 1 ) + ' -- ' + ( (dice[1] ) + 1 ) + ' -- <span class="diceThrow lastDiceThrow">' + ( (dice[2]  ) + 1 ) + '</span> -- ' + integrity + '% -- ' + diceNumber + ' -- ' + new Date().getTime() )
             
             
 

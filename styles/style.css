@@ -323,8 +323,10 @@ a{
     text-align          : center;
     font-size           : x-large;
     width               : 100%;
+    
 
 }
+
 .charsContainer{
 
     display             : flex;
@@ -387,7 +389,7 @@ filter: invert();
     background-image: url(../tcRes/chars/hapo.jpg);
 
 }
-.charIcon.kevd{
+.charIcon.kev{
 
     background-image: url(../tcRes/chars/kevd.jpg);
 
