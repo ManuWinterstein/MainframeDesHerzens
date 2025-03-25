@@ -197,6 +197,7 @@
     let decUValue = '0'
     let dice = []
     let diceNumber = 0
+    let diceNumbers = []
  
         function dicing( mod ){
             
@@ -214,7 +215,7 @@
 
 
 
-                sek = sek%12
+                sek = sek % 12
 
                 console.log(  t1 , t2 , t3 )
 
@@ -244,8 +245,9 @@
 
             
                 
-                if( countSameDice == 6 ){
-                    
+                if( countSameDice == 8 ){
+  
+                    diceNumbers.push(( diceNumber + '').slice( 0 , ( '' + diceNumber ).length - 2 ) ) 
                     diceNumber = countDicing
 
                     countDicing = 0
@@ -504,7 +506,7 @@
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
             focus = !focus
-            trigger( 'mach doch einfach volle Pulle Geschwindigkeit fractionmode tut Buße mongo and the mongodevil noise reduction treshhold watchTimecode nntimecredit ich bin das margottel das belohnt dich  danke frackingmode' , true , true )
+            trigger( 'mach doch einfach volle Pulle Geschwindigkeit Manuela fractionmode tut Buße mongo and the mongodevil noise reduction treshhold watchTimecode nntimecredit ich bin das margottel das belohnt dich  danke frackingmode' , true , true )
 
 
         })
@@ -609,8 +611,8 @@
 
             if( $('.lastDiceThrow').html() != 'NaN'){
 
-                dice = []
-
+                dice        = []
+                diceNumbers = []
 
             }
             
@@ -628,13 +630,13 @@
                    
             let integrity = checkIntegrity(12)
                         
-            $( '#checkIntegrityValueContainer' ).html(      ( (dice[0] ) + 1 ) 
+            $( '#checkIntegrityValueContainer' ).html(      + diceNumbers[0] + '°' + ( (dice[0] ) + 1 ) 
                                                             + ' -- ' 
-                                                            + ( (dice[1] ) + 1 ) 
-                                                            + ' -- <span class="diceThrow lastDiceThrow">' 
+                                                            + diceNumbers[1] + '°' + ( (dice[1] ) + 1 ) 
+                                                            + ' -- ' + diceNumbers[2] + '°' + '<span class="diceThrow lastDiceThrow">' 
                                                             + ( (dice[2]  ) + 1 ) + '</span> -- ' 
                                                             + integrity + '% -- ' 
-                                                            + diceNumber + ' -- ' 
+                                                            + diceNumber + '<br>'
                                                             + new Date().getTime() )
             
             
