@@ -233,8 +233,10 @@
                     console.log( 'uValue' , uValue )
 
                     if(uValue == decUValue){
-                        countSameDice++ }else{ decUValue = uValue; countSameDice = 0 } 
-
+                        countSameDice++ 
+                    }else{ 
+                        decUValue = uValue; countSameDice = 0 
+                    } 
                 }
 
 
@@ -249,7 +251,7 @@
                     countDicing = 0
                     countSameDice = 1
                     
-                    dice.push(Number( uValue ) + 1)     
+                    dice.push(Number( uValue ) )     
 
                 }
                 else{
@@ -526,15 +528,15 @@
         
         $( '.white' ).on( 'click mousedown', function(){
             
-            $( '.scrabbleBox' ).html( new Date().getTime() )
+            $( '.scrabbleBox' ).html(  dicing(12) + '-' +   new Date().getTime() )
             focus = !focus
             trigger( 'i die' , true , true  )
 
 
         })
         $( '.mahan' ).on( 'click mousedown', function(){
-            
-            $( '.scrabbleBox' ).html( new Date().getTime() )
+
+            $( '.scrabbleBox' ).html( dicing(12) + '-' +  new Date().getTime() )
             focus = !focus
             trigger( 'i die' , true , true  )
 
@@ -626,7 +628,14 @@
                    
             let integrity = checkIntegrity(12)
                         
-            $( '#checkIntegrityValueContainer' ).html( ( (dice[0] ) + 1 ) + ' -- ' + ( (dice[1] ) + 1 ) + ' -- <span class="diceThrow lastDiceThrow">' + ( (dice[2]  ) + 1 ) + '</span> -- ' + integrity + '% -- ' + diceNumber + ' -- ' + new Date().getTime() )
+            $( '#checkIntegrityValueContainer' ).html(      ( (dice[0] ) + 1 ) 
+                                                            + ' -- ' 
+                                                            + ( (dice[1] ) + 1 ) 
+                                                            + ' -- <span class="diceThrow lastDiceThrow">' 
+                                                            + ( (dice[2]  ) + 1 ) + '</span> -- ' 
+                                                            + integrity + '% -- ' 
+                                                            + diceNumber + ' -- ' 
+                                                            + new Date().getTime() )
             
             
 
