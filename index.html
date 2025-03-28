@@ -54,48 +54,16 @@
                 <div class="fooBox division" id="divisionOfFooWorld"></div>
             </div>
             <div class="getAndVisulisizeValuesContainer">
-                <div class="canvasBox" id="thirdEye" style="background-color: white;">
-                    <div class="canvasLayer">
-                        <canvas 
-                            class   ="visualisizeCanvas"
-                            id      ="visualisizeValues1" 
-                            style   ="    
-                                height      : 300px;
-                                position    : relative;
-                                left        : 110px;
-                                opacity     : 0.33;
-                                ">
-                        </canvas>
-                    </div>
-                    <div class="canvasLayer">
-                        <canvas 
-                            class   ="visualisizeCanvas"
-                            id      ="visualisizeValues2" 
-                            style   ="    
-                                height      : 300px;
-                                position    : relative;
-                                left        : 110px;
-                                opacity     : 0.33;" >
-                        </canvas>
-                    </div>
-                    <div class="canvasLayer">
-                        <canvas 
-                            class   ="visualisizeCanvas"
-                            id      ="visualisizeValues3" 
-                            style   ="    
-                                height      : 300px;
-                                position    : relative;
-                                left        : 110px;
-                                opacity     : 0.33;" >
-                        </canvas>
-                    </div>
+                <div class="canvasBox l1" id="thirdEye">
+                    
                   <!--iframe src="./visionOfView.html" width="200" height="200"></iframe-->  
                 </div>
                 <div id="checkIntegrityValueContainer"></div>
                 <input type="button" value="getValues" class="threeFooButton blue" id="getValueButton"/>
-                <input type="button" value="checkIntegrity" class="threeFooButton azur" id="checkIntegrityButton"/>
+                <input type="button" value="checkIntegrity" class="threeFooButton azur" id="integrityBetButton"/>
                 <input type="button" value="throwDice" class="threeFooButton azur" id="throwDiceButton"/>
-                <input type="button" value="getView" class="threeFooButton green" id="getViewButton"/>
+                <input type="button" value="getViewRGB" class="threeFooButton green" id="getViewRGBButton"/>
+                <input type="button" value="getViewArt" class="threeFooButton green" id="getViewArtButton"/>
                 <!--div   class="threeFooButton green threeFooPodiContainer" id="getViewButton"><div class="threeFooPodiDot"></div></div-->
                
             </div>    
@@ -246,10 +214,10 @@
             
                 
                 if( countSameDice == 8 ){
-  
-                    diceNumbers.push(( diceNumber + '').slice( 0 , ( '' + diceNumber ).length - 2 ) ) 
+                    
                     diceNumber = countDicing
-
+                    diceNumbers.push(( diceNumber + '').slice( 0 , ( '' + diceNumber ).length - 2 ) ) 
+                    
                     countDicing = 0
                     countSameDice = 1
                     
@@ -264,31 +232,39 @@
         }
         
    
+    function scrabbleBox( html ){
 
-
-
-    
-    function triggerShit( triggerShit , i ){
-
-
-        $( '.scrabbleBox' ).html( triggerShit )
-        i < 1000000000000 ? triggerShit( triggerShit , i++ ) : $( '.scrabbleBox' ).html( 'goldenSimpson genau nunu' )
+        $( '.scrabbleBox' ).html( html )
 
 
     }
+
+
 
     function trigger( spell , pulle , margottel ){
 
-        let triggerShit = 'trigger'
+            let tS = 'trigger'
 
-        for( let i = 0; i < 3 ; i++){
-            triggerShit += spell + pulle ? 'mach doch einfach volle pulle' : '' + margottel ? 'ich bin das margottel' : '' + 'trigger'
-        } 
-        triggerShit += spell + ' triggerShit '
+            for( let i = 0; i < 3 ; i++){
+                tS += spell + pulle ? 'mach doch einfach volle pulle' : '' + margottel ? 'ich bin das margottel' : '' + 'trigger'
+            } 
+            tS += spell + ' triggerShit '
 
-        triggerShit( triggerShit , 0 )
+            triggerShit( tS , pulle , margottel ).then()
 
+        }
+    
+    function triggerShit( tS , i ){
+
+
+        //$( '.scrabbleBox' ).html( tS )
+        if( i < 1000000000000 ) {
+             
+            return Promise.resolve().then(triggerShit( tS , i++ )) 
+        }
+    
     }
+
 
     function checkIntegrity( eyes ){
 
@@ -394,50 +370,161 @@
 
     }
 
-    function getView( tn , canX, canY, ctx  ){
+    function getColor(){
+
+        const letters = '0123456789ABCDEF';   
+        
+        let i = 0
+
+        let color ='#'
+
+        for(let b = 0; b < 8; b++){                 
+                 
+            
+            //do{
+ 
+                let r = Math.floor( Math.random() * 16 )
+
+                i = checkIntegrity( r + 6 )
+
+                color += letters[ r ]
+ 
+            //}while( i < 95 )                            
+ 
+        }
+
+        return color
+
+    }
+    function getColorRGB( r , g , b ){
+
+        const letters = '0123456789abcdef';   
+        
+        let integrity = 0
+
+        let color ='#' 
+
+        let ran
+
+          //  do{                 
+                  
+                           
+            let rC = letters[ Math.floor( Math.random()*16 ) ] + letters[ Math.floor( Math.random()*16 ) ]  
+            let bC = letters[ Math.floor( Math.random()*16 ) ] + letters[ Math.floor( Math.random()*16 ) ]
+            let gC = letters[ Math.floor( Math.random()*16 ) ] + letters[ Math.floor( Math.random()*16 ) ] 
+ 
+
+            
+
+        //integrity = checkIntegrity( 12 )
+        
+        //}while( integrity < 108 )
+
+
+        color += rC + gC + bC
+        //console.log( 'color', color )
+        
+        if( color == '#000000' || color == '#FFFFFF' ){
+
+            console.log('white', color)
+            getColorRGB( r , g , b )
+
+        }else{
+        
+            return color
+        
+        }
+    }
+
+    function rgbToGrayHex(r, g, b) {
+    
+    //const gray = Math.round(0.299 * (255-r) + 0.587 * (255-g) + 0.114 * (255-b))
+    const gray = Math.round(0.299 * r + 0.587 * g + 0.114 * b)
+
+    const hex = gray.toString(16).padStart(2, '0')
+
+    return `${hex}${hex}${hex}`
+}
+
+
+    function getView( tn , canX, canY, ctx , grey ){
 
         const didder = getCharacter( 'didder' )
-
-        const letters = '0123456789ABCDEF';
-
+        
         let didScrab
         let tnscrab
-
-        
-
+      
         for( let i = 0; i <= canX; i++ ){
            
             for( let j = 0; j <= canY; j++){
 
                 //for( let a = 0; a <= didder.maxSplits; a++){
-            for( let a = 0; a <= didder.maxSplits; a++){
-                   didScrab = getRanInt( didder.scrabble)
-                   tnScrab  = tn.scrabble
-                    let color ='#'
-                 if( didScrab == tnScrab ){
+                   
+                    let int = 0
+
+                        do{    
+                            
+
+                            didScrab = getRanInt( didder.scrabble ) % 13
                         
-                        //console.log('test')
-                        for(let b = 0; b < 6; b++){
-                            
-                            
-                            color += letters[Math.floor(Math.random() * 12)];
-                            //color += letters[dicing()];
-                            
+                            tnScrab  = getRanInt( tn.scrabble ) % 13
+                                                        
+                           // if( didScrab == 12 && tnScrab == 1 ){
+                           
+                                ctx.fillStyle = getColorRGB( true , true , true , grey )                       
+                                
+                                ctx.fillRect( i , j , 1, 1 );                         
+            
+                            //}
+                  
+                            //int = checkIntegrity(  12 )
+                    
+                        }while( didScrab != 12 && tnScrab != 1 )
 
-                        }
-                        
-                        ctx.fillStyle = color
-                        ctx.fillRect( i , j , 2, 2 );
-                            //$('#thirdEye').append('<div style="width:1px;height:1px;background-color:'+color+'">')
-        
-
-                    }
-
-                }
-
+                //}
 
             }
         }
+
+        return ctx
+    }
+    function getViewRGB( tn , canX, canY, ctx , r , g , b ){
+
+        //const didder = getCharacter( 'didder' )
+        
+        //let didScrab
+        //let tnscrab
+      
+        for( let i = 0; i <= canX; i++ ){
+           
+            for( let j = 0; j <= canY; j++){
+
+                //for( let a = 0; a <= didder.maxSplits; a++){
+                   
+                    let int = 0
+
+          //              do{    
+                            
+
+                            //didScrab = getRanInt( didder.scrabble ) % 12
+                        
+                            //tnScrab  = getRanInt( tn.scrabble ) % 12
+                                                        
+                            //if( didScrab == 12 && tnScrab == 1 ){
+                                
+                                ctx.fillStyle = getColorRGB( r , g , b)                       
+                                
+                                ctx.fillRect( i , j , 1 , 1 );                         
+            
+                           // }
+                          int = checkIntegrity( 12 )
+            //            }while( int < 63 )
+
+                //}
+
+            }
+        }
+
         return ctx
     }
 
@@ -484,6 +571,7 @@
            return words
     }
 
+    let run = true 
     jQuery(document).ready(function(){
 
         var puPaAr = ["1a","1b","1c","2a","2b","2c","3a","3b"];
@@ -498,14 +586,12 @@
         $( '.charIcon' ).click( this, function(){
 
             $( this ).css( 'outline',' 2px solid white' )
-            console.log( 'test' )
+            
+        }) 
 
-        })
-
-        $( '.jos' ).on( 'click mousedown', function(){
+        $( '#jos' ).on( 'mousedown', function(){
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
-            focus = !focus
             trigger( 'mach doch einfach volle Pulle Geschwindigkeit Manuela fractionmode tut Buße mongo and the mongodevil noise reduction treshhold watchTimecode nntimecredit ich bin das margottel das belohnt dich  danke frackingmode' , true , true )
 
 
@@ -513,8 +599,15 @@
         $( '.ste' ).on( 'click mousedown', function(){
 
             $( '.scrabbleBox' ).html( new Date().getTime() )
-            focus = !focus
             trigger( 'again again again and again' , false , false )
+
+
+        })
+                        
+        $( '.white' ).on( 'click mousedown', function(){
+            
+            $( '.scrabbleBox' ).html(  dicing(12) + '-' +   new Date().getTime() )
+            trigger( 'i die' , true , true  )
 
 
         })
@@ -522,29 +615,29 @@
         $( '.kev' ).on( 'click mousedown', function(){
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
-            focus = !focus
             trigger( 'mongo and the mongodevil' , true , true  )
 
 
         })
         
-        $( '.white' ).on( 'click mousedown', function(){
-            
-            $( '.scrabbleBox' ).html(  dicing(12) + '-' +   new Date().getTime() )
-            focus = !focus
-            trigger( 'i die' , true , true  )
-
-
-        })
         $( '.mahan' ).on( 'click mousedown', function(){
 
             $( '.scrabbleBox' ).html( dicing(12) + '-' +  new Date().getTime() )
-            focus = !focus
-            trigger( 'i die' , true , true  )
+            trigger( 'geschwindigkeit' , false , false  )
 
 
         })
 
+        $( '.mar' ).on( 'click mousedown', function(){
+            
+            $( '.scrabbleBox' ).html( new Date().getTime() )
+            focus = !focus
+            trigger( 'three slaves just listen to *' , true , true  )
+
+
+        })
+       
+        
         $( '#catHubLogo' ).click( function(){
             
             setTimeout($( '.scrabbleBox' ).val( 'denoize' ),1000000000)
@@ -557,55 +650,265 @@
 
         })
 
-  /*       $('#tryToClarifyWordsButton').click( function(){
-
-            let words =  $('.scrabbleBox').html().toString()
-
-            console.log('test', words)
-           $('.scrabbleBox').html( clarifyScrabble( words ) )
+        const dpi = 4
+        let imageInc = dpi
 
 
-        }) */
+        $( '#getViewRGBButton' ).click( function (){
 
-        $( '#getViewButton' ).click( function (){
+            let m = 10
+            
+            
 
-            $( '.scrabbleBox' ).html( new Date().getTime() )
-            let canvas = document.getElementById("visualisizeValues1");
-            let ctx1 = canvas.getContext("2d");
-            canvas = document.getElementById("visualisizeValues2");
-            let ctx2 = canvas.getContext("2d");
-            canvas = document.getElementById("visualisizeValues3");
-            let ctx3 = canvas.getContext("2d"); 
+            let cloneCanvas = []
 
-            let tn = getCharacter( 'didder' )
+            
+            
+            $( '.canvasBox' ).append(
 
-            for( let i = 0; i < tn.maxSplits; i++){
+                `<div class="canvasLayer">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues1_0" 
+                            style   ="    
+                                height      : 300px;
+                                position    : relative;
+                                left        : 110px;
+                                ">
+                        </canvas>
+                    </div>   
+                    <div class="canvasLayer" >
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValuesGrey_0" 
+                            style   ="    
+                                height      : 300px;
+                                position    : relative;
+                                left        : 110px;" >
+                        </canvas>
+                    </div>
+                    <div class="canvasClones" style="position:absolute; top: 0; left:0"></div>`
+                )
+
+
+            let colorCanvas1 = document.getElementById("visualisizeValues1_0");          
+            let cctx1 = colorCanvas1.getContext("2d");
+            
+            let greyCanvas1 = document.getElementById("visualisizeValuesGrey_0");
+            let gctx1 = greyCanvas1.getContext("2d");
+            
+
+            let tn = getCharacter( 'didder' )           
+                
+                   
+                           
+          
+            let cctx2
+            let gctx2        
+            
+            
+
+            for( let i = 1 ; i < dpi + 1 ; i++){
+            
+                let t = new Date().getMilliseconds()    
+                
+                //let j = i % dpi
+
+
+                cctx1 =      getViewRGB( tn , 200, 200, cctx1,  true, true ,  true ,  false )
+                    setTimeout( null , m )
+
+                gctx1 =      getViewRGB( tn , 200, 200, gctx1, true  ,  true , true  ,  true )
+                    setTimeout( null , m )
+
+
+                if(imageInc > 0 ){    
+            
+                    $( '.canvasBox' ).append(
+
+                `
+                 <div class="canvasLayer on">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues1_` + i + `" 
+                            style   ="    
+                                height      : 300px;
+                                position    : relative;
+                                left        : 11` + i + `px;
+                                top         : `+ i + `px
+                                ">
+                        </canvas>
+                    </div>   
+                </div>
+                 <div class="canvasLayer on">
+                        <canvas 
+                            class   ="visualisizeCanvas"
+                            id      ="visualisizeValues2_` + i + `" 
+                            style   ="    
+                                height      : 300px;
+                                position    : relative;
+                                left        : 11` + i + 1 + `px;
+                                top         : `+ i + 1 + `px
+                                ">
+                        </canvas>
+                    </div>   
+                </div>`
+                )
+
+                }
+                    
+                    let colorCanvas2 = document.getElementById("visualisizeValues1_" + i );
+                    cctx2 = colorCanvas2.getContext("2d");
+
+                    let greyCanvas2 = document.getElementById("visualisizeValues2_" + i );
+                    gctx2 = greyCanvas2.getContext("2d");
+                    
+                    cctx2.drawImage( colorCanvas1 , 0 , 0 )
+                    //gctx2.drawImage(greyCanvas1 , 0 , 0) 
+
+                    imageInc--
+
+                    if( t % 1000 < 400 ){
+
+                        //console.log('60Hz')
+
+                        $( '.canvasClones' ).remove()
+                        imageInc = dpi
+                        $( 'integrityBetButton' ).click()
+
+                    }
+
+            }    
+
+
+
+              //  }
+            
+              $( colorCanvas1 ).ready( function(){
+                $( '#integrityBetButton' ).click()
+            })
               
-              ctx1 =      getView( tn , 200, 200, ctx1 )
-                    setTimeout( null , 80 )
+        })
+       
+        $( '#getViewArtButton' ).click( function (){
+
+            //console.log( 'getViewArt' , imageInc )
+
+            $( '.scrabbleBox' ).html( new Date().getTime() + 'again again again and again' )
+            
+            let m = 80
+            
+            let canvas 
+            
+            for( let j = 0 ; j < 2 ; j++ ){
+            
+                canvas = document.getElementById("visualisizeValues1_" + j );
+                let ctx1 = canvas.getContext("2d");
+                canvas = document.getElementById("visualisizeValues2_" + j );
+                let ctx2 = canvas.getContext("2d");
+                canvas = document.getElementById("visualisizeValues3_" + j );
+                let ctx3 = canvas.getContext("2d");  
                 
-              ctx2 =      getView( tn , 200, 200, ctx2 )
-                    setTimeout( null , 80 )
+                //canvas = document.getElementById("visualisizeValuesGrey_" + i );
+                //let ctxGrey = canvas.getContext("2d"); 
                 
-              ctx3 =      getView( tn , 200, 200, ctx3 )
-                    setTimeout( null , 80 )
+                let tn = getCharacter( 'didder' )
+
+                //for( let i = 0; i < tn.maxSplits; i++ ){ 
+                    
+                    ctx1 =      getView( tn , 200, 200, ctx1        , false )
+                        setTimeout( null , m )            
+                    
+                    ctx2 =      getView( tn , 200, 200, ctx2        , false )
+                        setTimeout( null , m )
+                    
+                    ctx3 =      getView( tn , 200, 200, ctx3        , false)
+                            setTimeout( null , m ) 
+                    
+                    /* if( i % 2 == 0  ){
+                    ctxGrey =   getView( tn , 200, 200, ctxGrey     , true )//, true , true , true )
+                            setTimeout( null , m )
+                    } */
+                    
+               // }
             }
+            
+            $( canvas ).ready( function(){
+                $( '#integrityBetButton' ).click()
+            })
+
+        }).on( 'click' , function(){  
+
+            if( imageInc > 0 ){
+
+                imageInc--
+                $( this ).click()
+
+            }
+
+            if( imageInc == 0 ) 
+                imageInc = dpi
+             
+
+
         })
 
-        $( '#checkIntegrityButton' ).click( function(){
+        const pci = 32
+        let checks = pci
+        let metaIntegrity = 0
+        
+        $( '#integrityBetButton' ).click( function(){
 
             $( '.scrabbleBox' ).html( new Date().getTime() )
 
             let integrity = checkIntegrity( 12 )
 
-            integrity   = 100 - 72 / 100 *  ( integrity - 12 )     
+              
 
-            console.log(integrity)
+            //console.log(integrity)
 
             $( '#checkIntegrityValueContainer' ).html( integrity + '%' )
 
+            if( integrity > 40 )
+                metaIntegrity = integrity
 
-        })
+
+        }).on( 'click' , function( ){  
+
+                $( '#checkIntegrityValueContainer' ).ready( function(){
+                
+                    if( checks > 0 ){
+          
+                        try{
+             
+                            if( metaIntegrity > 80 ){
+
+        
+                 
+                                setTimeout( null , 10 )
+        
+                                $( '.scrabbleBox' ).html( new Date().getTime() + 'again again again and again' )                    
+                                $( '#getViewRGBButton' ).click()
+
+                                
+                 
+                            }
+                            
+                            checks--    
+                            $( '#integrityBetButton' ).click()
+                        
+                        }catch{
+
+                            setTimeout( null , 10 )
+                            $( '#getViewRGBButton' ).click()
+
+                        }
+                    }
+
+                    if( checks == 0 ) 
+                        checks = pci
+                })
+            })
 
         $( '#throwDiceButton' ).click( function(){
 

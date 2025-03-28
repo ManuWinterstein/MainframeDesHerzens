@@ -239,17 +239,17 @@ a{
 
 .threeFooButton{
 
-    padding                 : 10px;
+    padding                 : 5px;
     background-color        : #1205b7;
     color                   : #f1eded;
-    font-size               : x-large;
+    font-size               : large;
     width                   : 100%;
     align-self              : center;
     z-index                 : 9;
     outline                 : 3px solid #f1eded;
     border                  : 9px solid #111f23;
     border-radius           : 50px;
-    margin                  : 10px 30px;
+    margin                  : 5px 30px;
 
 }
 
@@ -451,20 +451,30 @@ filter: invert();
 }
 .canvasBox{
 
-    position: relative;
-    width: 100vw;
-    height: 300px;
+    position            : relative;
+    width               : 100vw;
+    height              : 300px;
     /* left: 2.5vw; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display             : flex;
+    justify-content     : center;
+    align-items         : center;
+    background-color    : #ffffff;
 
 }
 
 .canvasLayer
 {
     position        : absolute;
+    opacity         : 0.5;
+    visibility      : hidden;
 }
+
+.canvasLayer.on{
+
+    visibility      :  visible;
+
+}
+
 .puzzlePart{
 
     float: left;
