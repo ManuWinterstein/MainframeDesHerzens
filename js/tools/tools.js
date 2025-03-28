@@ -17,6 +17,7 @@ function getRanInt(godI){
 //-------------------------------------------------------------------------getColorBlock------------------------------------
 
 const letters = '0123456789abcdef';
+
 let color ='#'
 
 function getColor(){  
@@ -33,7 +34,9 @@ return color
 
 }
 
-function getColorRGB( r , g , b ){
+function getColorRGB(){
+
+    let color ='#'
 
     let rC = letters[ Math.floor( Math.random()*16 ) ] + letters[ Math.floor( Math.random()*16 ) ]  
     let bC = letters[ Math.floor( Math.random()*16 ) ] + letters[ Math.floor( Math.random()*16 ) ]
@@ -44,7 +47,7 @@ function getColorRGB( r , g , b ){
     if( color == '#000000' || color == '#FFFFFF' ){
 
         console.log('white', color)
-        getColorRGB( r , g , b )
+        getColorRGB()
 
     }else{
     
@@ -69,15 +72,13 @@ return `${hex}${hex}${hex}`
 
 //--------------------------------------------------------------------------getViewBlock------------------------------------
 
-function getViewRGB( tn , canX, canY, ctx , r , g , b ){
+function getViewRGB( canX, canY, ctx ){
   
     for( let i = 0; i <= canX; i++ ){
        
         for( let j = 0; j <= canY; j++){
               
-                let int = 0
-
-                ctx.fillStyle = getColorRGB( r , g , b)                       
+                ctx.fillStyle = getColorRGB()                       
                             
                 ctx.fillRect( i , j , 1 , 1 );                         
         
@@ -88,12 +89,12 @@ function getViewRGB( tn , canX, canY, ctx , r , g , b ){
 }
 
 
-function getViewScrabblrdColors( tn , canX, canY, ctx  ){
+function getViewScrabbledColors( canX, canY, ctx , tn ){
 
     const didder = getCharacter( 'didder' )
     
     let didScrab
-    let tnscrab
+    let tnScrab
   
     for( let i = 0; i <= canX; i++ ){
        
@@ -120,9 +121,6 @@ function getViewScrabblrdColors( tn , canX, canY, ctx  ){
 
 function drawCanvas( ctx, c , j , ü0, acht, dpi , i ){                    
 
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-     
     for( let a = 0; a < c.length; a++){
      
          for (let b = 0; b < 6; b++) {
@@ -135,6 +133,7 @@ function drawCanvas( ctx, c , j , ü0, acht, dpi , i ){
      }
 
  }
+
 
 //-------------------------------------------------------------------------------spellTrigger------------------------------------------------------------
 

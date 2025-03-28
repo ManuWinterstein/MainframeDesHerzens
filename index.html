@@ -416,10 +416,10 @@
                 //let j = i % dpi
 
 
-                cctx1 =      getViewRGB( tn , 200, 200, cctx1,  true, true ,  true ,  false )
+                cctx1 =      getViewRGB( 200, 200, cctx1 )
                     setTimeout( null , m )
 
-                gctx1 =      getViewRGB( tn , 200, 200, gctx1, true  ,  true , true  ,  true )
+                gctx1 =      getViewScrabbledColors( 200 , 200 , gctx1 ,tn )
                     setTimeout( null , m )
 
 
@@ -465,11 +465,11 @@
                     gctx2 = greyCanvas2.getContext("2d");
                     
                     cctx2.drawImage( colorCanvas1 , 0 , 0 )
-                    //gctx2.drawImage(greyCanvas1 , 0 , 0) 
+                    gctx2.drawImage(greyCanvas1 , 0 , 0) 
 
                     imageInc--
 
-                    if( t % 1000 < 400 ){
+                    if( t % 140 < 140 ){
 
                         //console.log('60Hz')
 
