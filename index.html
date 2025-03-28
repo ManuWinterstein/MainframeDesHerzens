@@ -358,137 +358,96 @@
         $( '#getViewRGBButton' ).click( function (){
 
             let m = 10
-            
-            
 
             let cloneCanvas = []
 
             
+            $('.canvasBox').children().remove()
             
+               
             $( '.canvasBox' ).append(
 
-                `<div class="canvasLayer">
-                        <canvas 
-                            class   ="visualisizeCanvas"
-                            id      ="visualisizeValues1_0" 
-                            style   ="    
-                                height      : 300px;
-                                position    : relative;
-                                left        : 110px;
-                                ">
-                        </canvas>
-                    </div>   
-                    <div class="canvasLayer" >
-                        <canvas 
-                            class   ="visualisizeCanvas"
-                            id      ="visualisizeValuesGrey_0" 
-                            style   ="    
-                                height      : 300px;
-                                position    : relative;
-                                left        : 110px;" >
-                        </canvas>
-                    </div>
-                    <div class="canvasClones" style="position:absolute; top: 0; left:0"></div>`
-                )
-
+            `<div class="canvasLayer">
+                <canvas 
+                    class   ="visualisizeCanvas"
+                    id      ="visualisizeValues1_0" 
+                   style   ="    
+                        height      : 300px;
+                        position    : relative;
+                        left        : 110px;
+                        ">
+                </canvas>
+            </div>
+            `
+            )
 
             let colorCanvas1 = document.getElementById("visualisizeValues1_0");          
-            let cctx1 = colorCanvas1.getContext("2d");
-            
-            let greyCanvas1 = document.getElementById("visualisizeValuesGrey_0");
-            let gctx1 = greyCanvas1.getContext("2d");
+            let cctx1 = colorCanvas1.getContext("2d");     
+       
             
 
+                        
             let tn = getCharacter( 'didder' )           
-                
-                   
-                           
-          
+
             let cctx2
-            let gctx2        
-            
-            
 
             for( let i = 1 ; i < dpi + 1 ; i++){
-            
-                let t = new Date().getMilliseconds()    
                 
-                //let j = i % dpi
-
-
-                cctx1 =      getViewRGB( 200, 200, cctx1 )
-                    setTimeout( null , m )
-
-                gctx1 =      getViewScrabbledColors( 200 , 200 , gctx1 ,tn )
-                    setTimeout( null , m )
-
-
-                if(imageInc > 0 ){    
-            
-                    $( '.canvasBox' ).append(
-
-                `
-                 <div class="canvasLayer on">
-                        <canvas 
-                            class   ="visualisizeCanvas"
-                            id      ="visualisizeValues1_` + i + `" 
-                            style   ="    
-                                height      : 300px;
-                                position    : relative;
-                                left        : 11` + i + `px;
-                                top         : `+ i + `px
-                                ">
-                        </canvas>
-                    </div>   
-                </div>
-                 <div class="canvasLayer on">
-                        <canvas 
-                            class   ="visualisizeCanvas"
-                            id      ="visualisizeValues2_` + i + `" 
-                            style   ="    
-                                height      : 300px;
-                                position    : relative;
-                                left        : 11` + i + 1 + `px;
-                                top         : `+ i + 1 + `px
-                                ">
-                        </canvas>
-                    </div>   
-                </div>`
-                )
-
-                }
+                    let t = new Date().getMilliseconds()    
                     
-                    let colorCanvas2 = document.getElementById("visualisizeValues1_" + i );
-                    cctx2 = colorCanvas2.getContext("2d");
+                    cctx1 =      getViewRGB( 200, 200, cctx1 )
+                        setTimeout( null , m )
 
-                    let greyCanvas2 = document.getElementById("visualisizeValues2_" + i );
-                    gctx2 = greyCanvas2.getContext("2d");
-                    
-                    cctx2.drawImage( colorCanvas1 , 0 , 0 )
-                    gctx2.drawImage(greyCanvas1 , 0 , 0) 
+                    if(imageInc > 0 ){    
+                        
+                            $( '.canvasBox' ).append(
 
-                    imageInc--
+                            `
+                            <div class="canvasLayer on">
+                                    <canvas 
+                                        class   ="visualisizeCanvas"
+                                        id      ="visualisizeValues1_` + i + `" 
+                                        style   ="    
+                                            height      : 300px;
+                                            position    : relative;
+                                            left        : 11` + i + `px;
+                                            top         : `+ i + `px
+                                            ">
+                                    </canvas>
+                                </div>   
+                            </div>
+                            `
+                            )
 
-                    if( t % 140 < 140 ){
+                        }
+                        
+                        let colorCanvas2 = document.getElementById("visualisizeValues1_" + i );
+                        cctx2 = colorCanvas2.getContext("2d");
 
-                        //console.log('60Hz')
-
-                        $( '.canvasClones' ).remove()
-                        imageInc = dpi
-                        $( 'integrityBetButton' ).click()
-
-                    }
-
-            }    
-
-
-
-              //  }
+                        cctx2.drawImage( colorCanvas1 , 0 , 0 )
+                        
+                        imageInc--
             
-              $( colorCanvas1 ).ready( function(){
+                        if( $( '.caanvasLayer' ).length > 1 + i )
+                            $( '.canvasLayer' )[i].remove()
+
+                        if( t % 140 < 140 ){
+
+                            //console.log('60Hz')
+                            imageInc = dpi
+                            $( '.canvasClones' ).remove()
+                            imageInc = dpi
+                            $( 'integrityBetButton' ).click()
+
+                        }
+
+                }    
+            
+            
+            $( colorCanvas1 ).ready( function(){
                 $( '#integrityBetButton' ).click()
+            
             })
-              
         })
        
         $( '#getViewArtButton' ).click( function (){
