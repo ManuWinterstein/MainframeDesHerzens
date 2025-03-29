@@ -290,10 +290,10 @@
             
         }) 
 
-        $( '#jos' ).on( 'mousedown', function(){
+        $( '#hapo' ).on( 'mousedown', function(){
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
-            trigger( 'mach doch einfach volle Pulle Geschwindigkeit Manuela fractionmode tut Buße mongo and the mongodevil noise reduction treshhold watchTimecode nntimecredit ich bin das margottel das belohnt dich  danke frackingmode' , true , true )
+            trigger( 'frackingmode                       ' , true , true )
 
 
         })
@@ -452,65 +452,93 @@
        
         $( '#getViewArtButton' ).click( function (){
 
-            //console.log( 'getViewArt' , imageInc )
+            let m = 10
 
-            $( '.scrabbleBox' ).html( new Date().getTime() + 'again again again and again' )
-            
-            let m = 80
-            
-            let canvas 
-            
-            for( let j = 0 ; j < 2 ; j++ ){
-            
-                canvas = document.getElementById("visualisizeValues1_" + j );
-                let ctx1 = canvas.getContext("2d");
-                canvas = document.getElementById("visualisizeValues2_" + j );
-                let ctx2 = canvas.getContext("2d");
-                canvas = document.getElementById("visualisizeValues3_" + j );
-                let ctx3 = canvas.getContext("2d");  
-                
-                //canvas = document.getElementById("visualisizeValuesGrey_" + i );
-                //let ctxGrey = canvas.getContext("2d"); 
-                
-                let tn = getCharacter( 'didder' )
+            let cloneCanvas = []
 
-                //for( let i = 0; i < tn.maxSplits; i++ ){ 
+            
+            $('.canvasBox').children().remove()
+            
+               
+            $( '.canvasBox' ).append(
+
+            `<div class="canvasLayer">
+                <canvas 
+                    class   ="visualisizeCanvas"
+                    id      ="visualisizeValues1_0" 
+                   style   ="    
+                        height      : 300px;
+                        position    : relative;
+                        left        : 110px;
+                        ">
+                </canvas>
+            </div>
+            `
+            )
+
+            let colorCanvas1 = document.getElementById("visualisizeValues1_0");          
+            let cctx1 = colorCanvas1.getContext("2d");     
+       
+            
+
+                        
+            let tn = getCharacter( 'didder' )           
+
+            let cctx2
+
+            for( let i = 1 ; i < dpi + 1 ; i++){
+                
+                    let t = new Date().getMilliseconds()    
                     
-                    ctx1 =      getView( tn , 200, 200, ctx1        , false )
-                        setTimeout( null , m )            
-                    
-                    ctx2 =      getView( tn , 200, 200, ctx2        , false )
+                    cctx1 =      getViewDiced( 200, 200, cctx1 )
                         setTimeout( null , m )
-                    
-                    ctx3 =      getView( tn , 200, 200, ctx3        , false)
-                            setTimeout( null , m ) 
-                    
-                    /* if( i % 2 == 0  ){
-                    ctxGrey =   getView( tn , 200, 200, ctxGrey     , true )//, true , true , true )
-                            setTimeout( null , m )
-                    } */
-                    
-               // }
-            }
+
+                    if(imageInc > 0 ){    
+                        
+                            $( '.canvasBox' ).append(
+
+                            `
+                            <div class="canvasLayer on">
+                                    <canvas 
+                                        class   ="visualisizeCanvas"
+                                        id      ="visualisizeValues1_` + i + `" 
+                                        style   ="    
+                                            height      : 300px;
+                                            position    : relative;
+                                            left        : 11` + i + `px;
+                                            top         : `+ i + `px
+                                            ">
+                                    </canvas>
+                                </div>   
+                            </div>
+                            `
+                            )
+
+                        }
+                        
+                        let colorCanvas2 = document.getElementById("visualisizeValues1_" + i );
+                        cctx2 = colorCanvas2.getContext("2d");
+
+                        cctx2.drawImage( colorCanvas1 , 0 , 0 )
+                        
+                        imageInc--
             
-            $( canvas ).ready( function(){
+                        if( t % 140 < 140 ){
+
+                            imageInc = dpi
+                            $( '.canvasClones' ).remove()
+                            imageInc = dpi
+                            $( 'integrityBetButton' ).click()
+
+                        }
+
+                }    
+            
+            
+            $( colorCanvas1 ).ready( function(){
                 $( '#integrityBetButton' ).click()
+            
             })
-
-        }).on( 'click' , function(){  
-
-            if( imageInc > 0 ){
-
-                imageInc--
-                $( this ).click()
-
-            }
-
-            if( imageInc == 0 ) 
-                imageInc = dpi
-             
-
-
         })
 
         const pci = 32
@@ -572,35 +600,18 @@
 
         $( '#throwDiceButton' ).click( function(){
 
-            if( $('.lastDiceThrow').html() != 'NaN'){
-
-                dice        = []
-                diceNumbers = []
-
-            }
-            
-
-            let lastDice = 0
-            let c = 0
-            let a = true 
-            let b = !a
-
-            $( '.scrabbleBox' ).html( new Date().getTime() )
-           
-            
-            dicing( 12 )
-            
+            $( '.scrabbleBox' ).html( new Date().getTime() )          
                    
             let integrity = checkIntegrity(12)
-                        
-            $( '#checkIntegrityValueContainer' ).html(      + diceNumbers[0] + '°' + ( (dice[0] ) + 1 ) 
-                                                            + ' -- ' 
-                                                            + diceNumbers[1] + '°' + ( (dice[1] ) + 1 ) 
-                                                            + ' -- ' + diceNumbers[2] + '°' + '<span class="diceThrow lastDiceThrow">' 
-                                                            + ( (dice[2]  ) + 1 ) + '</span> -- ' 
-                                                            + integrity + '% -- ' 
-                                                            + diceNumber + '<br>'
-                                                            + new Date().getTime() )
+
+            let dicings = []
+
+       
+                
+            $( '#checkIntegrityValueContainer' ).html(  + diceSynced(12) + '°'                                            
+                                                        + integrity + '% -- ' 
+                                                        + '<br>'
+                                                        + new Date().getTime() )
             
             
 

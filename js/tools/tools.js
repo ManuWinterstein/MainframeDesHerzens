@@ -55,6 +55,30 @@ function getColorRGB(){
     
     }
 }
+function getColorDiced(){
+
+    let color ='#'
+
+    
+
+    let rC = letters[ dicingSynced() % 17 ] + letters[ dicingSynced() % 17 ]
+
+    let bC = letters[ dicingSynced() % 17 ] + letters[ dicingSynced() % 17 ]
+    
+    let gC = letters[ dicingSynced() % 17 ] + letters[ dicingSynced() % 17 ]
+
+    color += rC + gC + bC
+    
+    if( color == '#000000' || color == '#FFFFFF' ){
+
+        getColorDiced()
+
+    }else{
+    
+        return color
+    
+    }
+}
 
 function rgbToGrayHex(r, g, b) {
 
@@ -89,30 +113,17 @@ function getViewRGB( canX, canY, ctx ){
 }
 
 
-function getViewScrabbledColors( canX, canY, ctx , tn ){
-
-    const didder = getCharacter( 'didder' )
-    
-    let didScrab
-    let tnScrab
-  
+function getViewDiced( canX, canY, ctx , tn ){
+ 
     for( let i = 0; i <= canX; i++ ){
        
         for( let j = 0; j <= canY; j++){
-             
-                let int = 0
-
-                didScrab = getRanInt( didder.scrabble ) % 12
-                    
-                tnScrab  = getRanInt( tn.scrabble ) % 12
-                                                    
-                if( didScrab == 12 && tnScrab == 1 ){
-                            
-                    ctx.fillStyle = getColorRGB()                       
+                                        
+                    ctx.fillStyle = getColorDiced()                       
                             
                     ctx.fillRect( i , j , 1 , 1 );                         
         
-                }
+                
         }
     }
 
@@ -161,12 +172,12 @@ if( i < 1000000000000 ) {
 
 //-------------------------------------------------------------------------------getABetFunction-----------------------------------------------
 
-let countDicing = 0
-let countSameDice = 0
-let decUValue = '0'
-let dice = []
-let diceNumber = 0
-let diceNumbers = []
+//let countDicing = 0
+//let countSameDice = 0
+//let decUValue = '0'
+//let dice = []
+//let diceNumber = 0
+//let diceNumbers = []
 
 function checkIntegrity( eyes ){
 
@@ -198,7 +209,7 @@ function dicing( mod ){
 
     mod = mod ? mod : 12   
 
-    let m     =  new Date().getMilliseconds() % mod 
+    let m       =  new Date().getMilliseconds() % mod 
     let t       =  String(new Date().getTime()) 
     
     let t1      =   t.slice(t.length - 4 , t.length -3 ) 
@@ -242,4 +253,65 @@ function dicing( mod ){
         dicing()
 
     }
+}
+
+function getRandomNumber( mod ){
+
+    mod = mod ? mod : 99
+    
+    for( let i = 0; i < 999 ; i++){
+        t = new Date().getMilliseconds()
+        
+    }
+
+    t = t * Math.floor((t + '').slice(2))
+
+    return t%mod
+
+}
+
+
+
+function diceSynced( mod ){
+            
+    mod = mod ? mod : 12   
+   
+    let m = new Date().getMilliseconds()
+    
+    //console.log( m )
+
+    m = m%mod
+
+    //console.log( m )
+
+    let count = 0 
+    
+    let countSameDice = 0
+
+    let uValue = 0
+    
+    let decUValue = m 
+    
+    do{
+
+        uValue = getRandomNumber( 12 )
+
+        //console.log( 'uValue' , uValue )
+
+        if(uValue == decUValue){
+
+            countSameDice++ 
+
+        }else{ 
+
+            decUValue = uValue
+            countSameDice = 0 
+
+        } 
+
+        count++
+
+    }while( countSameDice < m ) 
+
+    return count-1 
 }
