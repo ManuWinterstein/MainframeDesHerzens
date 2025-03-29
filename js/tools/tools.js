@@ -259,7 +259,7 @@ function getRandomNumber( mod ){
 
     mod = mod ? mod : 99
     
-    for( let i = 0; i < 999 ; i++){
+    for( let i = 0; i < 1001 ; i++){
         t = new Date().getMilliseconds()
         
     }
