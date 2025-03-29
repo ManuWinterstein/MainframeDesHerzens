@@ -181,8 +181,8 @@ a{
 
 .threeFoosInnerContainer.top{
 
-    border-left     : 1px solid grey;
-    height          : 330px !important;
+    /*border-left     : 1px solid grey;*/
+    height          : 100px !important;
     display         : flex;
     flex            : auto;
     align-content   : space-between;
@@ -193,7 +193,7 @@ a{
 }
 .threeFoosInnerContainer.bottom{
 
-    height              : 180px !important;
+    height              : 100px !important;
     display             : flex;
     flex-direction      : row;
     width               : 600px;
@@ -205,7 +205,7 @@ a{
 
 .puzzleContainer,.threeFoosInnerContainer{
 
-    margin      :   50px auto;
+    margin      :   10px auto;
     width       :   310px;
     height      :   310px;
     display     :   flex;
@@ -227,7 +227,8 @@ a{
 
 .fooBox.division{
 
-    margin-top  : 30px;
+    margin-top  : 55px;
+    height      : 15px;
 
 }
 
@@ -248,8 +249,8 @@ a{
     z-index                 : 9;
     outline                 : 3px solid #f1eded;
     border                  : 9px solid #111f23;
-    border-radius           : 50px;
-    margin                  : 5px 30px;
+    /*border-radius           : 50px;*/
+    margin                  : 8px 0;
 
 }
 
@@ -313,6 +314,7 @@ a{
    flex-flow            : wrap;
    align-content        : flex-end;
    max-width            : 33vw;
+   margin-left          : 50px;
 
 }
 #checkIntegrityValueContainer{
@@ -321,9 +323,9 @@ a{
     height              : 50px;
     color               : white;
     text-align          : center;
-    font-size           : x-large;
+    font-size           : large;
     width               : 100%;
-    
+    top                 : -55px;
 
 }
 
@@ -453,6 +455,7 @@ filter: invert();
 
     position            : relative;
     width               : 100vw;
+    top                 : -70px;
     height              : 300px;
     /* left: 2.5vw; */
     display             : flex;
@@ -465,7 +468,7 @@ filter: invert();
 .canvasLayer
 {
     position        : absolute;
-    opacity         : 0.5;
+    opacity         : 0.25;
     visibility      : hidden;
 }
 

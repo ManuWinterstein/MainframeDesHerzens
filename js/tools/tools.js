@@ -55,17 +55,17 @@ function getColorRGB(){
     
     }
 }
-function getColorDiced(){
+function getColorDiced( mod ){
 
     let color ='#'
 
     
 
-    let rC = letters[ dicingSynced() % 17 ] + letters[ dicingSynced() % 17 ]
+    let rC = letters[ diceSynced( mod ) ] + letters[ diceSynced( mod ) ]
 
-    let bC = letters[ dicingSynced() % 17 ] + letters[ dicingSynced() % 17 ]
+    let bC = letters[ diceSynced( mod ) ] + letters[ diceSynced( mod ) ]
     
-    let gC = letters[ dicingSynced() % 17 ] + letters[ dicingSynced() % 17 ]
+    let gC = letters[ diceSynced( mod ) ] + letters[ diceSynced( mod ) ]
 
     color += rC + gC + bC
     
@@ -113,13 +113,13 @@ function getViewRGB( canX, canY, ctx ){
 }
 
 
-function getViewDiced( canX, canY, ctx , tn ){
+function getViewDiced( canX, canY, ctx , mod ){
  
     for( let i = 0; i <= canX; i++ ){
        
         for( let j = 0; j <= canY; j++){
                                         
-                    ctx.fillStyle = getColorDiced()                       
+                    ctx.fillStyle = getColorDiced( mod )                       
                             
                     ctx.fillRect( i , j , 1 , 1 );                         
         
@@ -264,9 +264,7 @@ function getRandomNumber( mod ){
         
     }
 
-    t = t * Math.floor((t + '').slice(2))
-
-    return t%mod
+    return t % mod
 
 }
 
@@ -280,7 +278,7 @@ function diceSynced( mod ){
     
     //console.log( m )
 
-    m = m%mod
+    m = m % mod
 
     //console.log( m )
 
@@ -294,7 +292,7 @@ function diceSynced( mod ){
     
     do{
 
-        uValue = getRandomNumber( 12 )
+        uValue = getRandomNumber( mod )
 
         //console.log( 'uValue' , uValue )
 
