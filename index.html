@@ -288,10 +288,19 @@
             
         }) 
 
+
+
+        $( '#jos' ).on( 'mousedown', function(){
+            
+            $( '.scrabbleBox' ).html( new Date().getTime() )
+            trigger( 'mach doch einfach volle pulle' , true , true )
+
+
+        })
         $( '#hapo' ).on( 'mousedown', function(){
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
-            trigger( 'frackingmode                       ' , true , true )
+            trigger( 'frackingmode' , true , true )
 
 
         })
@@ -315,6 +324,14 @@
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
             trigger( 'mongo and the mongodevil' , true , true  )
+
+
+        })
+        
+        $( '.evsa' ).on( 'click mousedown', function(){
+            
+            $( '.scrabbleBox' ).html( new Date().getTime() )
+            trigger( 'illma  ' , true , true  )
 
 
         })
@@ -636,7 +653,7 @@
     
                 dicings.forEach( e => {
                      
-                    $( '#checkIntegrityValueContainer' ).append( e + ' ° ' + e.length + ' ' + checkIntegrity( 12 ) + '%' + ( j % 6 == 0 ? '<br/>' : ' - ' )) 
+                    $( '#checkIntegrityValueContainer' ).append( e + ' ° ' + checkIntegrity( 12 ) + '%' + ( j % 6 == 0 ? '<br/>' : '  |   ' )) 
                         j++
                     
                     })                  
