@@ -91,7 +91,9 @@
                 <!--div   class="threeFooButton green threeFooPodiContainer" id="getViewButton"><div class="threeFooPodiDot"></div></div-->
                
             </div>   
+            <div class="badgeWall"><div class="badgeVollePulle"></div></div>
         </div>
+        
         
         <!--div class="puzzleContainer">
             <div class="puzzlePart" id="1a" val="0"></div>
@@ -297,7 +299,7 @@
 
 
         })
-        $( '#hapo' ).on( 'mousedown', function(){
+        $( '.hapo' ).on( 'mousedown', function(){
             
             $( '.scrabbleBox' ).html( new Date().getTime() )
             trigger( 'frackingmode' , true , true )
@@ -330,15 +332,14 @@
         
         $( '.evsa' ).on( 'click mousedown', function(){
             
-            $( '.scrabbleBox' ).html( new Date().getTime() )
-            trigger( 'illma  ' , true , true  )
-
+            $( '.scrabbleBox' ).html( new Date().getTime() + 'illma  ' )
+            
 
         })
         
         $( '.mahan' ).on( 'click mousedown', function(){
 
-            $( '.scrabbleBox' ).html( dicing(12) + '-' +  new Date().getTime() )
+            $( '.scrabbleBox' ).html( new Date().getTime() )
             trigger( 'geschwindigkeit' , false , false  )
 
 
@@ -653,7 +654,7 @@
     
                 dicings.forEach( e => {
                      
-                    $( '#checkIntegrityValueContainer' ).append( e + ' ° ' + checkIntegrity( 12 ) + '%' + ( j % 6 == 0 ? '<br/>' : '  |   ' )) 
+                    $( '#checkIntegrityValueContainer' ).append( e + ' ° ' + getType( 'lettersLowerCase' )[ diceSynced( 16 ) % 24 ] + getType( 'lettersLowerCase' )[ diceSynced( 16 ) % 24 ] + ' ~ '  + checkIntegrity( 12 ) + '%' + ( j % 6 == 0 ? '<br/>' : '  |   ' )) 
                         j++
                     
                     })                  

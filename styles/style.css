@@ -451,6 +451,18 @@ filter: invert();
     background-image: url(../tcRes/chars/beat.jpg);
 
 }
+
+.badgeVollePulle{
+
+    width:500px;
+    height:400px;
+    background-image: url(../tcRes/symbols/vollePulle.svg);
+    background-size: contain;
+}
+
+
+
+
 .canvasBox{
 
     position            : relative;

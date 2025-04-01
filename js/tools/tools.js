@@ -311,5 +311,5 @@ function diceSynced( mod ){
 
     }while( countSameDice < m ) 
 
-    return count-1 
+    return count -    1 
 }
