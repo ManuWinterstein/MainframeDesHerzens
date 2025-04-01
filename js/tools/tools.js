@@ -148,6 +148,9 @@ function drawCanvas( ctx, c , j , ü0, acht, dpi , i ){
 
 //-------------------------------------------------------------------------------spellTrigger------------------------------------------------------------
 
+let triggerCount =  0
+
+
 function trigger( spell , pulle , margottel ){
 
     let tS = 'trigger'
@@ -157,15 +160,17 @@ function trigger( spell , pulle , margottel ){
     } 
     tS += spell + ' triggerShit '
 
-    triggerShit( tS , pulle , margottel ).then()
+    triggerShit( tS , pulle , margottel )
 
 }
 
 function triggerShit( tS , i ){
 
-if( i < 1000000000000 ) {
+triggerCount = i    
+
+if( triggerCount < 1 ) {
      
-    return Promise.resolve().then(triggerShit( tS , i++ )) 
+    return triggerShit( tS , i++ ) 
 }
 
 }
