@@ -177,12 +177,13 @@ if( triggerCount < 1 ) {
 
 //-------------------------------------------------------------------------------getABetFunction-----------------------------------------------
 
-//let countDicing = 0
-//let countSameDice = 0
-//let decUValue = '0'
-//let dice = []
-//let diceNumber = 0
-//let diceNumbers = []
+let countDicing     = 0
+let countSameDice   = 0
+let decUValue       = '0'
+let dice = []
+let diceNumber      = 0
+let diceNumbers     = []
+let iDice           = 0
 
 function checkIntegrity( eyes ){
 
@@ -209,54 +210,62 @@ function checkIntegrity( eyes ){
 }
 
 function dicing( mod ){
+    
+    if( iDice < 1 ){
+
+        let uValue = 0
+
+        mod = mod ? mod : 12   
+
+        let m       =  new Date().getMilliseconds() % mod 
+        let t       =  String(new Date().getTime()) 
+        
+        let t1      =   t.slice(t.length - 4 , t.length -3 ) 
+        let t2      =   t.slice(t.length - 3 , t.length -2 ) 
+        let t3      =   t.slice(t.length - 2 , t.length -1 ) 
+
+        countDicing++  
+        
+        uValue = countDicing 
+        
+        if( m == 0 ){
+
+            uValue = String(uValue).slice(String(uValue).length - 3 , String(uValue).length - 1 ) 
             
-    let uValue = 0
+            if(uValue == decUValue){
 
-    mod = mod ? mod : 12   
+                countSameDice++ 
 
-    let m       =  new Date().getMilliseconds() % mod 
-    let t       =  String(new Date().getTime()) 
+            }else{ 
+
+                decUValue = uValue; countSameDice = 0 
+
+            } 
+
+        }
+
+        if( countSameDice == 8 ){
+            
+            diceNumber = countDicing
+
+            diceNumbers.push(( diceNumber + '').slice( 0 , ( '' + diceNumber ).length - 2 ) ) 
+            
+            countDicing = 0
+            
+            countSameDice = 1
+            
+            return diceNumber      
+
+        }
+        else{
+
+            
+            dicing( mod )
+
+        }
+        
+        iDice++
     
-    let t1      =   t.slice(t.length - 4 , t.length -3 ) 
-    let t2      =   t.slice(t.length - 3 , t.length -2 ) 
-    let t3      =   t.slice(t.length - 2 , t.length -1 ) 
-
-    countDicing++  
-    
-    uValue = countDicing 
-    
-    if( m == 0 ){
-
-        uValue = String(uValue).slice(String(uValue).length - 3 , String(uValue).length - 1 ) 
-        
-        if(uValue == decUValue){
-
-            countSameDice++ 
-
-        }else{ 
-
-            decUValue = uValue; countSameDice = 0 
-
-        } 
-
-    }
-
-    if( countSameDice == 8 ){
-        
-        diceNumber = countDicing
-
-        diceNumbers.push(( diceNumber + '').slice( 0 , ( '' + diceNumber ).length - 2 ) ) 
-        
-        countDicing = 0
-        countSameDice = 1
-        
-        dice.push(Number( uValue ) )     
-
-    }
-    else{
-
-        dicing()
-
     }
 }
 
@@ -317,4 +326,37 @@ function diceSynced( mod ){
     }while( countSameDice < m ) 
 
     return count -    1 
+}
+//--------------------------------------------------------------------------------write/read Coins---------------------------------------------------------------------------
+
+
+function writeBitsToCoin( coin , bits , symbol ){
+
+    coin += '.coi'
+    let data = ''
+    
+    for ( let i = 0 ; i < bits ; i++){
+
+        data += symbol
+
+    }
+    
+    const url = "/php/writeCoin.php";
+    fetch(url, {
+        method : "POST",
+        body: JSON.stringify({
+        
+            coin : coin,
+            bits : data
+
+        })
+    }).then(
+        response => response.text() // .json(), etc.
+        // same as function(response) {return response.text();}
+    ).then(
+
+        html => { return html } 
+
+    )
+
 }

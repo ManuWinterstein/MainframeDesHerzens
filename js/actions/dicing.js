@@ -61,14 +61,14 @@ let scrabLetters = getType( 'scrabble' )
 
 let susi = scrabLetters.length -1
 
-let title       = scrabLetters[getRanInt( susi )] + scrabLetters[getRanInt( susi )]
+let title       = scrabLetters[getRanInt( susi )] + scrabLetters[getRanInt( susi )] + scrabLetters[getRanInt( susi )]  + scrabLetters[getRanInt( susi )]
 let attacker    = scrabLetters[getRanInt( susi )] + scrabLetters[getRanInt( susi )] + scrabLetters[getRanInt( susi )]  + scrabLetters[getRanInt( susi )]
 
-let html        = title + ' ' + attacker + '  x'
+let html        =  attacker + '  X'
 
 let victims      = ''
 
-for( let i = 0 ; i < getRanInt(3) ; i++ ){
+for( let i = 0 ; i < getRanInt(8) ; i++ ){
 
     victims      += ' ' + scrabLetters[getRanInt( susi )] + scrabLetters[getRanInt( susi )] + scrabLetters[getRanInt( susi )]  + scrabLetters[getRanInt( susi )] 
 

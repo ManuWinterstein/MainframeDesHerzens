@@ -13,7 +13,7 @@ body,html{
 main{
 
     background-color    : #111f23;
-    height              : 90vh;
+    height              : 100%;
     display             : flex;
     flex-direction      : column;
     overflow            : auto;
@@ -164,7 +164,7 @@ a{
 
     display                     : flex;
     flex-direction              : row;
-    height                      : 60vh;
+    height                      : 735px;
     margin                      : 0 1vw;
     overflow                    : hidden;
     margin-top                  : 25px;
@@ -454,11 +454,19 @@ filter: invert();
 
 .badgeVollePulle{
 
-    width:500px;
-    height:400px;
-    background-image: url(../tcRes/symbols/vollePulle.svg);
-    background-size: contain;
+    width               :500px;
+    height              :400px;
+    background-image    : url(../tcRes/symbols/vollePulle.svg);
+    background-size     : contain;
 }
+
+.sBitsLogger{
+
+    color               : white;
+    position            : relative;
+    left                : 20px;
+}
+
 
 
 
