@@ -12,7 +12,7 @@ body,html{
 
 main{
 
-    background-color    : #111f23;
+    background-color    : #555b5c;
     height              : 100%;
     display             : flex;
     flex-direction      : column;
@@ -25,7 +25,7 @@ main{
 }
 footer{
 
-    background-color    : #c5ec20;
+    background-color    : #ae4848;
     height              : 10vh;
     display             : flex;
     flex-direction      : column;
@@ -33,10 +33,12 @@ footer{
     position            : fixed;
     bottom              : 0;
     width               : 100vw;
-    border-top          : 15px solid #ffffff ;
-
-
+    box-shadow          : inset 0px 5px 1px white;
 }
+
+
+
+
 
 h1{
 
@@ -46,7 +48,7 @@ h1{
     background-color    : #2f3435;
     padding             : 10px 22px;
     border-radius       : 10px;
-    box-shadow          : 0px 8px 1px #1205b7;
+    box-shadow          : 0px 8px 1px #ffffff;
     margin              : 0;
     display             : flex;
     flex-wrap           : nowrap;
@@ -71,12 +73,13 @@ a{
 
 .subTitle{
 
-    margin              : 0;
     color               : rgb(255, 255, 255);
-    margin-top          : -6px;
     padding             : 0 25px;
     font-weight         : lighter;
     font-size           : 15px;
+    position            : relative;
+    bottom              : 0;
+}
 
 }
 .subTitle.dark{
@@ -177,6 +180,8 @@ a{
     background-color            : #e8dede;
     box-shadow                  : 15px 30px 1px #1205b7;
     overflow                    : hidden;
+    position                    : absolute;
+    visibility                  : hidden;
 
 }
 
@@ -242,14 +247,14 @@ a{
 .threeFooButton{
 
     padding                 : 5px;
-    background-color        : #1205b7;
+    background-color        : #59d1fb;
     color                   : #f1eded;
     font-size               : large;
-    width                   : 100%;
+    width                   : 140px;
     align-self              : center;
     z-index                 : 9;
     outline                 : 3px solid #f1eded;
-    border                  : 9px solid #111f23;
+    border                  : 9px solid #ae4848;
     /*border-radius           : 50px;*/
     margin                  : 8px 0;
 
@@ -314,8 +319,8 @@ a{
    display              : flex;
    flex-flow            : wrap;
    align-content        : flex-end;
-   max-width            : 33vw;
-   margin-left          : 50px;
+   max-width            : 65vw;
+   margin-left          : 10px;
 
 }
 #checkIntegrityValueContainer{
@@ -332,11 +337,15 @@ a{
 
 .charsContainer{
 
-    display             : flex;
-    justify-content     : space-between;
-    width               : 80vw;
-    align-self          : center;
-    margin              : 11px;
+    display                     : flex;
+    justify-content             : space-evenly;
+    width                       : 60vw;
+    align-self                  : center;
+    padding                     : 7px;
+    padding-bottom              : 8px;
+    background-color            : #59d1fb;
+    border-radius               : 10px;
+    border-top                  : 8px solid #dd985f;
 
 }
 
@@ -347,9 +356,13 @@ a{
     background-size             : cover;
     float                       : left;
     background-repeat           : no-repeat;
-    border-radius               : 10px;
-    border                      : 7px solid #ffffff;
-    box-shadow                  : inset 2px 2px 25px #2c492d;
+    border-radius               : 8px;
+    outline                     : none !important;
+    box-shadow                  : inset 2px 2px 25px #383c38
+  
+}
+
+
 }
 
 .charIcon:hover{
@@ -475,11 +488,11 @@ filter: invert();
 }
 .badgeProfaneDrow{
 
-    width               :500px;
-    height              :520px;
+    width               : 500px;
+    height              : 549px;
     background-image    : url(../tcRes/chars/profaneDrowSketch_2.jpg);
     background-size     : contain;
-    margin              : 20px;
+    margin              : 0 10px;
 }
 
 .sBitsLogger{
@@ -488,6 +501,7 @@ filter: invert();
     font-style          : oblique;
     font-weight         : bold;
     margin-left         : 5px;
+    margin-top          : 5px;
 
 }
 
@@ -498,9 +512,9 @@ filter: invert();
 .canvasBox{
 
     position            : relative;
-    width               : 100vw;
+    width               : 1000px;
     top                 : -70px;
-    height              : 300px;
+    height              : 550px;
     /* left: 2.5vw; */
     display             : flex;
     justify-content     : center;

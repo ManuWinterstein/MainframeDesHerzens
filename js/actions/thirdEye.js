@@ -31,7 +31,8 @@ $( '#catHubLogo' ).click( function(){
             class   ="visualisizeCanvas"
             id      ="visualisizeValues1_0" 
            style   ="    
-                height      : 300px;
+                height      : 500px;
+                width       : 750px;
                 position    : relative;
                 left        : 110px;
                 ">
@@ -54,7 +55,7 @@ $( '#catHubLogo' ).click( function(){
         
             let t = new Date().getMilliseconds()    
             
-            cctx1 =      getViewRGB( 200, 200, cctx1 )
+            cctx1 =      getViewRGB( 750, 500, cctx1 )
                 setTimeout( null , m )
 
             if(imageInc > 0 ){    
@@ -67,7 +68,8 @@ $( '#catHubLogo' ).click( function(){
                                 class   ="visualisizeCanvas"
                                 id      ="visualisizeValues1_` + i + `" 
                                 style   ="    
-                                    height      : 300px;
+                                    height      : 500px;
+                                    width       : 750px;
                                     position    : relative;
                                     left        : 11` + i + `px;
                                     top         : `+ i + `px
