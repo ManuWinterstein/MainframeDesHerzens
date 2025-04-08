@@ -453,6 +453,14 @@ filter: invert();
 
 }
 
+.charIcon.onTrigger{
+
+    transition: all ease-in 200;
+    background-image: none;
+    background-color: white;
+
+}
+
 .badgeVollePulle{
 
     width               :500px;

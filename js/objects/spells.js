@@ -3,33 +3,37 @@ function getAllSpellCharacters(){
     let container 
     return container = {
 
-        'josefine'  :   {
+        'j'  :   {
                             
                             id          : 'jos',
-                            spell       : 'mach doch einfach volle pulle',
+                            spell       : [ 'mach doch einfach volle pulle', 'rene richter'  ],
+                            maxChance   : [ [  1 , 0  ], [ 1 , 56 ] ],  // 0 for infinite, 56 for 3 * 1 per week
                             type        : 'rekursiv',
                             maxSBits    : 3,
-                            bit         : 'j',
+                            bit         : 'josi so fine',
                             copyright   : 'margott',
                             tn          : 'first one of police orion'            
 
                         },
 
-        'tino'      :   {
+        't'      :      {
                             
                             id          : 'hapo',
-                            spell       : 'frackingmode',
+                            spell       : [ 'frackingmode', 'fractionmode' , 'kann ni wahr sein' , 'immer widder immer widder' ],
+                            maxChance   : [ [  1 , 0  ], [ 1 , 0 ], [ 1 , 0 ], [ 1 , 0 ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
-                            bit         : 't',
+                            bit         : 'tino',
                             copyright   : 'margott',
                             tn          : 'mummelkuh , katrin r , der illi und 2 weitere'
 
                         },
-        'clara'     :   {
+
+        'c'     :       {
                             
                             id          : 'cla',
-                            spell       : 'frackingmode',
+                            spell       : [ 'Heil Matti' ],
+                            maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
                             bit         : 'c',
@@ -37,59 +41,83 @@ function getAllSpellCharacters(){
                             tn          : 'matti'
 
                         },
-        'madelain'  :   {
+
+        'ma'    :       {
                             
                             id          : 'mahan',
-                            spell       : 'Geschwindigkeit',
+                            spell       : [ 'Geschwindigkeit' ],
+                            maxChance   : [ [  0 ,  0 ] ],
                             type        : 'normal',
                             maxSBits    : 3,
-                            bit         : 'm',
+                            bit         : 'madelaine',
                             copyright   : 'tempelkatze manu',
                             tn          : 'gesellschaft'
 
                         },
-        'kevin'     :   {
+
+        'k'     :       {
                             
                             id          : 'kev',
-                            spell       : 'mongo and the mongodevil',
+                            spell       : [ 'mongo and the mongodevil' ],
+                            maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
-                            bit         : 'k',
+                            bit         : 'kevin',
                             copyright   : 'margott',
                             tn          : 'gesellschaft'
 
                         },
-        'andrea'    :   {
+
+        'a'     :       {
                             
                             id          : 'white',
-                            spell       : 'i die',
+                            spell       : [ 'i die' ],
+                            maxChance   : [ [  1 , 0  ] ],
                             type        : 'normal',
                             maxSBits    : 3,
-                            bit         : '',
+                            bit         : 'andrea',
                             copyright   : 'tempelkatze manu',
                             tn          : 'tn'
 
                         },
-        'stefan'   :   {
-                            
+
+        's'     :       {
+
                             id          : 'ste',
-                            spell       : 'again again again and again',
+                            spell       : [ 'again again again and again' ],
+                            maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
-                            bit         : '',
+                            bit         : 'stefan',
                             copyright   : 'margott',
                             tn          : 'spell'
 
                         },
-        'norbert'   :   {
+
+        'n'     :       {
                             
                             id          : 'noport',
-                            spell       : 'rene richter',
+                            spell       : [ 'rene richter' ],
+                            maxChance   : [ [  0 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
-                            bit         : '',
+                            bit         : 'norbert',
                             copyright   : 'alter margott',
                             tn          : 'first me and then other'
+
+                        },
+
+        'b'     :       {
+                            
+                            id          : 'beat',
+                            spell       : [ 'file' ],
+                            maxChance   : [ [  0 , 0  ] ],
+                            type        : 'rekursiv',
+                            maxSBits    : 3,
+                            bit         : 'beata',
+                            copyright   : 'tempelkatze manu',
+                            tn          : 'a whole lot of bunch',
+                            file        : ['Rt25-4-8-2']
 
                         },
 

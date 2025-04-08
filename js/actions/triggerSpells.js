@@ -2,21 +2,71 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //------------------------------------------------------------helpers-------------------------------------------------------------------------------------
 
+const file = 'Rt25-4-8-9'
+const spells = getAllSpellCharacters()
 
+function callSubSpells( spell ){
+
+triggerCount = 0
+
+$( 'onTrigger' ).removeClass( 'onTrigger' )
+
+    if( spell && spell.spell[ 0 ] != 'file' ){
+    
+        $( '.' + spell.id  ).click().addClass( 'onTrigger' )
+
+    }else{
+
+        readSpellsFromCoin( spell.file[ 0 ] )
+
+    }  
+}
+
+function readSpellsFromCoin( coin ){
+
+    readBitsFromCoin( coin ).then( text =>{
+
+        let data = text 
+    
+        let bits = data.length
+                
+        for( let i = 0 ; i < data.length ; i++ ){
+
+            triggerCount = 2
+
+            if( spells[ data[ i ] ] ){
+
+                    callSubSpells( spells[ data[ i ] ] )
+                    sBitsSum++
+
+            }
+
+            if( i == data.length -1 ){
+
+                setTimeout( () => { $( '.onTrigger' ).removeClass( 'onTrigger' ) }, 300 )
+                
+                
+
+            }
+
+        } 
+    
+
+    })
+}
 
 //------------------------------------------------------------defense/backHacks--------------------------------------------------------------------------- 
 
-let file = 'Rt25-4-7-3'
 
 let sBitsSum = 0
 
 const maxSBitsJos   = 3
 let sBitsJos        = 0
-$( '#jos' ).on( 'mousedown', function(){
+$( '#jos' ).on( 'click', function(){
     
     triggerCount = 0
     
-    trigger( 'mach doch einfach volle pulle' , true , true )
+    trigger( spells[ 'j' ].spell[0] , true , true )
 
     sBitsJos += triggerCount * 29
 
@@ -30,6 +80,8 @@ $( '#jos' ).on( 'mousedown', function(){
             $(this).click()
         
     }
+
+    setTimeout( null , 80 )
 
 }).on( 'mouseup' , function(){
 
@@ -48,14 +100,9 @@ $( '.hapo' ).on( 'click', function(){
     
     triggerCount = 0
 
-    trigger( 'frackingmode', true , true )
+    trigger( spells[ 't' ].spell[0] , true , true )
 
     sBitsHapo += triggerCount * 12
-
-    //console.log( 'hapo' )
-    //sBitsHapoSum += readSpellsFromCoin( 'Rt25-4-7-3' )
-
-    
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits ~> 4Fach CreditAufnahme'  )
 
@@ -87,7 +134,7 @@ $( '.ste' ).on( 'click mousedown', function(){
 
     triggerCount = 0
     
-    trigger( 'again again again and again' , true , true )
+    trigger( spells[ 's' ].spell[0] , true , true )
 
     sBitsSte += triggerCount * 27
 
@@ -101,6 +148,9 @@ $( '.ste' ).on( 'click mousedown', function(){
             $(this).click()
         
     }   
+
+    setTimeout( null , 80 )
+
 }) 
                 
 
@@ -110,7 +160,7 @@ $( '.white' ).on( 'click mousedown', function(){
     
     triggerCount = 0
 
-    trigger( ' i die  ' , true , true  )
+    trigger( spells[ 'a' ].spell[0] , true , true )
 
     sBitsWh += triggerCount * 8
 
@@ -126,7 +176,7 @@ $( '.cla' ).on( 'click mousedown', function(){
     
     triggerCount = 0
 
-    trigger( 'heil Matthias' , true , true  )
+    trigger( spells[ 'c' ].spell[0] , true , true )
 
     sBitsCla += triggerCount * 13
 
@@ -140,6 +190,8 @@ $( '.cla' ).on( 'click mousedown', function(){
             $(this).click()
         
     }
+
+    setTimeout( null , 80 )
     
 }).on( 'mouseup' , function(){
 
@@ -156,7 +208,7 @@ $( '.kev' ).on( 'click mousedown', function(){
     
     triggerCount = 0
 
-    trigger( 'mongo and the mongodevil' , true , true  )
+    trigger( spells[ 'k' ].spell[0] , true , true )
 
     sBitsKev += triggerCount * 24
                                         
@@ -171,15 +223,97 @@ $( '.kev' ).on( 'click mousedown', function(){
 })
 
 
-
+const maxSBitsEvsa = 3
 let sBitsEvsa = 0
 $( '.evsa' ).on( 'click mousedown', function(){
     
     sBitsEvsa += 8
 
+    readSpellsFromCoin( 'Rt25-4-8-1' )
+
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
     
+}).on( 'click' , function(){ 
+
+    for( let i = 0 ; i < maxSBitsEvsa ; i ++ ){
+
+        if( triggerCount < 1 )
+            $(this).click()
+        
+    }
+
+    setTimeout( null , 80 )
+
+}).on( 'mouseup' , function(){
+
+    writeBitsToCoin( file , sBitsEvsa , 'e')
+    
+    sBitsEvsa = 0
+
+    $( '.onTrigger' ).removeClass( 'onTrigger' )
+
 })
+
+
+const maxSBitsBeat  = 1
+let sBitsBeat       = 0
+$( '.beat' ).on( 'click mousedown', function(){
+    
+    sBitsBeat += 8
+
+    readSpellsFromCoin( 'Rt25-4-8-8' )
+
+    $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' MBits' )
+    
+})/* .on( 'click' , function(){ 
+
+    for( let i = 0 ; i < maxSBitsBeat ; i ++ ){
+
+        if( triggerCount < 1 )
+            $(this).click()
+        
+    }
+
+    setTimeout( null , 80 )
+
+}) */.on( 'mouseup' , function(){
+
+    writeBitsToCoin( file , sBitsBeat , 'b')
+    
+    sBitsBeat = 0
+
+}) 
+
+const maxSBitsNik   = 3
+let sBitsNik        = 0
+$( '.nik' ).on( 'click mousedown', function(){
+    
+    sBitsNik += 8
+
+    readSpellsFromCoin( 'Rt25-4-7-3' )
+
+    $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
+    
+}).on( 'click' , function(){ 
+
+    for( let i = 0 ; i < maxSBitsNik ; i ++ ){
+
+        if( triggerCount < 1 )
+            $(this).click()
+        
+    }
+
+    setTimeout( null , 80 )
+
+}).on( 'mouseup' , function(){
+
+    writeBitsToCoin( file , sBitsNik , 'i')
+    
+    sBitsNik = 0
+
+    $( '.onTrigger' ).removeClass( 'onTrigger' )
+
+}) 
 
 
 
@@ -188,7 +322,7 @@ $( '.mahan' ).on( 'click mousedown', function(){
 
     triggerCount = 0
 
-    trigger( 'geschwindigkeit' , true , true  )
+    trigger( spells[ 'm' ].spell[0] , true , true )
 
     sBitsMahan = triggerCount * 15
 
@@ -207,7 +341,7 @@ $( '.mahan' ).on( 'click mousedown', function(){
 
 $( '.mar' ).on( 'mousedown', function(){
     
-    
+    readSpellsFromCoin( file )
    /*  readBitsFromCoin( file ).then( text =>{
 
         let data = text 
@@ -255,7 +389,7 @@ $( '.noport' ).on( 'click mousedown', function(){
     
     triggerCount = 0
 
-    trigger( 'Rene Richter' , true , true  )
+    trigger( spells[ 'n' ].spell[0] , true , true )
 
     sBitsNoport += triggerCount * 12
 
