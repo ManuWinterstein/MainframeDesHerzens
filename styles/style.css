@@ -12,6 +12,7 @@ body,html{
 
 main{
 
+    
     background          : rgb(209,125,47);
     background          : linear-gradient(0deg, rgba(209,125,47,1) 0%, rgba(255,136,3,1) 0%, rgba(159,190,196,1) 56%);
     height              : 100%;
@@ -21,9 +22,20 @@ main{
     position            : fixed;
     top                 : 0;
     width               : 100vw;
+    
 
 
 }
+
+.mainInner{
+
+    background-image    : url(../tcRes/symbols/theSignOfMe.svg);
+    background-size     : 76%;
+    background-repeat   : no-repeat;
+    background-position : right;
+
+}
+
 footer{
 
     background-color    : #ffd044;
