@@ -8,7 +8,7 @@ function getRandomColor() {
     return color;
 }
 
-function getRanInt(godI){
+function getRanInt( godI ){
 
     return Math.floor( Math.random() * godI )
 

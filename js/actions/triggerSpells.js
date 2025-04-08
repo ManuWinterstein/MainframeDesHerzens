@@ -9,11 +9,15 @@ function callSubSpells( spell ){
 
 triggerCount = 0
 
-$( 'onTrigger' ).removeClass( 'onTrigger' )
+$( 'onTrigger' ).removeClass( 'onTrigger jYellow jGreen jOrange jBlue jRed' )
+
+colors = [ 'jYellow' , 'jGreen' , 'jOrange' , 'jBlue' , 'jRed' ]
 
     if( spell && spell.spell[ 0 ] != 'file' ){
+
+        let color = colors[ getRanInt( 5 ) ] 
     
-        $( '.' + spell.id  ).click().addClass( 'onTrigger' )
+        setTimeout( () => {  $( '.' + spell.id  ).click().removeClass( 'jYellow jGreen jOrange jBlue jRed' ).addClass(  'onTrigger ' +  color ) } , 10 )
 
     }else{
 
@@ -43,7 +47,7 @@ function readSpellsFromCoin( coin ){
 
             if( i == data.length -1 ){
 
-                setTimeout( () => { $( '.onTrigger' ).removeClass( 'onTrigger' ) }, 300 )
+                setTimeout( () => { $( '.onTrigger' ).removeClass( 'onTrigger jYellow jGreen jOrange jBlue jRed' ) }, 300 )
                 
                 
 

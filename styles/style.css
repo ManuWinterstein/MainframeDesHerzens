@@ -453,12 +453,17 @@ filter: invert();
 
 }
 
+.jBlue       { background-color: rgb(35, 255, 226) }
+.jYellow     { background-color: rgb(255, 222, 33) }
+.jGreen      { background-color: rgb(35, 255, 108) }
+.jRed        { background-color: rgb(255, 79, 35)  }
+.jOrange    { background-color: rgb(35, 255, 226) }
+
 .charIcon.onTrigger{
 
-    transition: all ease-in 200;
+    transition: all ease-in 80;
     background-image: none;
-    background-color: white;
-
+    
 }
 
 .badgeVollePulle{
