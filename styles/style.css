@@ -414,6 +414,7 @@ filter: invert();
 .charIcon.jos{
 
     background-image: url(../tcRes/chars/jos.jpg);
+    
 
 }
 .charIcon.white{
@@ -455,9 +456,17 @@ filter: invert();
 .badgeVollePulle{
 
     width               :500px;
-    height              :400px;
+    height              :175px;
     background-image    : url(../tcRes/symbols/vollePulle.svg);
     background-size     : contain;
+}
+.badgeProfaneDrow{
+
+    width               :500px;
+    height              :520px;
+    background-image    : url(../tcRes/chars/profaneDrowSketch_2.jpg);
+    background-size     : contain;
+    margin              : 20px;
 }
 
 .sBitsLogger{

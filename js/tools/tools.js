@@ -14,6 +14,20 @@ function getRanInt(godI){
 
 }
 
+function getTime( opt ){
+
+
+    if( opt = 't' ){
+
+        return new Date().getTime()
+
+    }
+
+
+
+
+}
+
 //-------------------------------------------------------------------------getColorBlock------------------------------------
 
 const letters = '0123456789abcdef';
@@ -341,7 +355,7 @@ function writeBitsToCoin( coin , bits , symbol ){
 
     }
     
-    const url = "/php/writeCoin.php";
+    const url = '/php/writeCoin.php';
     fetch(url, {
         method : "POST",
         body: JSON.stringify({
@@ -359,4 +373,91 @@ function writeBitsToCoin( coin , bits , symbol ){
 
     )
 
+}
+
+function readBitsFromCoin( coin ){
+
+    coin += '.coi'
+
+    const url = '/php/readCoin.php';
+    return fetch(url, {
+                    method : "POST",
+                    body: JSON.stringify({
+                    
+                        coin : coin
+
+                    })
+                }).then(
+                    response => response.text() // .json(), etc.
+                    // same as function(response) {return response.text();}
+                ).then(
+
+                    html => { return html } 
+
+                )
+}
+
+function readSpellsFromCoin( coin ){
+
+    readBitsFromCoin( coin ).then( text =>{
+
+        let data = text 
+    
+        let bits = data.length
+
+        let map = {} 
+        
+        map[ 't' ] = 'hapo' 
+        map[ 'm' ] = 'mahan' 
+        map[ 'j' ] = 'jos' 
+        map[ 'k' ] = 'kev' 
+        map[ 'n' ] = 'noport' 
+        map[ 'c' ] = 'cla'
+        
+        for( let i = 0 ; i < data.length ; i++ ){
+
+            triggerCount = 2
+
+            if( map[ data[ i ] ] ){
+
+                let selector = '.'+ map[ data[ i ] ]
+
+                $( selector ).click()
+
+            }
+
+        } 
+
+        /* let a = []
+        let c = 0    
+
+        do{
+
+            let i = map[ data[ getRanInt( data.length ) ] ]
+
+            console.log( i )
+
+            triggerCount = 2
+
+            if( map[ data[ i ] ] && getRanInt( 12 ) != 11 ){
+
+                a.push( i )
+
+                c = 0
+
+                let selector = '.'+ map[ data[ i ] ]
+
+                $( selector ).click()
+
+            }else{
+
+                c++
+
+            }
+
+        }while(  c < 12  ) */
+
+        return bits ? bits : 0
+
+    })
 }

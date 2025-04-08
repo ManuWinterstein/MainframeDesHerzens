@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //------------------------------------------------------------defense/backHacks--------------------------------------------------------------------------- 
 
+let file = 'Rt25-4-7-3'
+
+let sBitsSum = 0
+
 const maxSBitsJos   = 3
 let sBitsJos        = 0
 $( '#jos' ).on( 'mousedown', function(){
@@ -16,7 +20,7 @@ $( '#jos' ).on( 'mousedown', function(){
 
     sBitsJos += triggerCount * 29
 
-    $( '.sBitsLogger' ).html( new Date().getTime() + ' - ' + sBitsHapo + ' Bits ÜberschuldungsBonus bei Angreifer'  )
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' Bits ÜberschuldungsBonus bei Angreifer'  )
 
 }).on( 'click' , function(){ 
 
@@ -27,27 +31,33 @@ $( '#jos' ).on( 'mousedown', function(){
         
     }
 
-    setTimeout( () => { $( this ).prop( 'data-disabled' , true ) } , 3000 )
-    $( this ).prop( 'data-disabled' , false )
+}).on( 'mouseup' , function(){
 
-  }).on( 'mouseup' , function(){
+    writeBitsToCoin( file , sBitsJos , 'j')
+    
+    sBitsJos = 0
 
-    console.log( writeBitsToCoin( 'postMatti' , sBitsJos , 'j') )
-    sBitsCla = 0
-
-  }) 
+}) 
       
+
+
 const maxSBitsHapo      = 3
 let sBitsHapo           = 0
-$( '.hapo' ).on( 'mousedown', function(){
+let sBitsHapoSum        = 0
+$( '.hapo' ).on( 'click', function(){
     
     triggerCount = 0
 
-    trigger( 'frackingmode' , true , true )
+    trigger( 'frackingmode', true , true )
 
-    sBitsHapo += triggerCount * 12 * 4
+    sBitsHapo += triggerCount * 12
 
-    $( '.sBitsLogger' ).html( new Date().getTime() + ' - ' + sBitsHapo + ' Bits ~> 4Fach CreditAufnahme'  )
+    //console.log( 'hapo' )
+    //sBitsHapoSum += readSpellsFromCoin( 'Rt25-4-7-3' )
+
+    
+
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits ~> 4Fach CreditAufnahme'  )
 
 }).on( 'click' , function(){ 
 
@@ -58,16 +68,18 @@ $( '.hapo' ).on( 'mousedown', function(){
         
     }
 
-    setTimeout( () => { $( this ).prop( 'data-disabled' , true ) } , 3000 )
-    $( this ).prop( 'data-disabled' , false )
+    setTimeout( null , 80 )
 
-  }).on( 'mouseup' , function(){
+}).on( 'mouseup' , function(){
 
-    console.log( writeBitsToCoin( 'postMatti' , sBitsHapo , 't') )
-    sBitsCla = 0
+    writeBitsToCoin( file , sBitsHapo , 't')
+    
+    sBitsHapo = 0
 
-  }) 
+}) 
       
+
+
 
 const maxSBitsSte   = 3
 let sBitsSte        = 0
@@ -79,7 +91,7 @@ $( '.ste' ).on( 'click mousedown', function(){
 
     sBitsSte += triggerCount * 27
 
-    $( '.sBitsLogger' ).html( new Date().getTime() + ' - ' + sBitsSte + ' Bits' )
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits' )
 
 }).on( 'click' , function(){ 
 
@@ -88,13 +100,11 @@ $( '.ste' ).on( 'click mousedown', function(){
         if( triggerCount < 1)
             $(this).click()
         
-    }
-
-    setTimeout( () => { $( this ).prop( 'data-disabled' , true ) } , 3000 )
-    $( this ).prop( 'data-disabled' , false )
-
-  }) 
+    }   
+}) 
                 
+
+
 let sBitsWh = 0 
 $( '.white' ).on( 'click mousedown', function(){
     
@@ -104,9 +114,12 @@ $( '.white' ).on( 'click mousedown', function(){
 
     sBitsWh += triggerCount * 8
 
-    $( '.sBitsLogger' ).html(  new Date().getTime() + ' - ' + sBitsWh + ' Bits' )
+    $( '.sBitsLogger' ).html(  getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits' )
 
 })
+
+
+
 const maxSBitsCla    = 3
 let sBitsCla        = 0
 $( '.cla' ).on( 'click mousedown', function(){
@@ -117,7 +130,7 @@ $( '.cla' ).on( 'click mousedown', function(){
 
     sBitsCla += triggerCount * 13
 
-    $( '.sBitsLogger' ).html(  new Date().getTime() + ' - ' + sBitsCla + ' Bits ©Lisel' )
+    $( '.sBitsLogger' ).html(  getTime() + ' - ' + ( sBitsSum++ ) + ' Bits ©Lisel' )
 
 }).on( 'click' , function(){ 
 
@@ -127,15 +140,17 @@ $( '.cla' ).on( 'click mousedown', function(){
             $(this).click()
         
     }
-    setTimeout( () => { $( this ).prop( 'data-disabled' , true ) } , 3000 )
-    $( this ).prop( 'data-disabled' , false )
+    
+}).on( 'mouseup' , function(){
 
-  }).on( 'mouseup' , function(){
-
-    console.log( writeBitsToCoin( 'postMatti' , sBitsCla , 'c') )
+    writeBitsToCoin( file , sBitsCla , 'c')
+    
     sBitsCla = 0
 
-  })
+})
+
+
+
 let sBitsKev = 0
 $( '.kev' ).on( 'click mousedown', function(){
     
@@ -144,25 +159,29 @@ $( '.kev' ).on( 'click mousedown', function(){
     trigger( 'mongo and the mongodevil' , true , true  )
 
     sBitsKev += triggerCount * 24
-
-    $( '.sBitsLogger' ).html( new Date().getTime() + ' - ' + sBitsKev + ' Bits' )
+                                        
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits' )
 
 }).on( 'mouseup' , function(){
 
-    console.log( writeBitsToCoin( 'postMatti' , sBitsKev , 'k') )
-    sBitsCla = 0
+    writeBitsToCoin( file , sBitsKev , 'k')
+    
+    sBitsKev = 0
 
-  })
+})
+
+
 
 let sBitsEvsa = 0
 $( '.evsa' ).on( 'click mousedown', function(){
     
     sBitsEvsa += 8
 
-    $( '.sBitsLogger' ).html( new Date().getTime() + 'illma  ' + ' - ' + sBitsKev + ' Bits' )
+    $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
     
-
 })
+
+
 
 let sBitsMahan = 0
 $( '.mahan' ).on( 'click mousedown', function(){
@@ -173,24 +192,63 @@ $( '.mahan' ).on( 'click mousedown', function(){
 
     sBitsMahan = triggerCount * 15
 
-    $( '.sBitsLogger' ).html( new Date().getTime() + ' - ' + sBitsMahan + ' Bits' )
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits' )
 
 
 }).on( 'mouseup' , function(){
 
-    console.log( writeBitsToCoin( 'postMatti' , sBitsMahan , 'm') )
-    sBitsCla = 0
-
-  })
-
-$( '.mar' ).on( 'click mousedown', function(){
+    writeBitsToCoin( file , sBitsMahan , 'm') 
     
-    $( '.sBitsLogger' ).html( new Date().getTime() )
+    sBitsMahan = 0
+
+})
+
+
+
+$( '.mar' ).on( 'mousedown', function(){
     
-    trigger( 'three slaves just listen to *' , true , true  )
+    
+   /*  readBitsFromCoin( file ).then( text =>{
+
+        let data = text 
+    
+        let bits = data.length
+
+        let map = {} 
+        
+        map[ 't' ] = 'hapo' 
+        map[ 'm' ] = 'mahan' 
+        map[ 'j' ] = 'jos' 
+        map[ 'k' ] = 'kev' 
+        map[ 'n' ] = 'noport' 
+        //map[ 'c' ] = 'cla'
+        
+
+        for( let i = 0 ; i < data.length ; i++ ){
+
+            triggerCount = 2
+
+            if( map[ data[ i ] ] ){
+
+                let selector = '.'+ map[ data[ i ] ]
+
+                $( selector ).click()
+                
+            }
+
+        }
+
+        
+        
+    }) */
+    
+
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + readSpellsFromCoin( file ) + ' KBits' )
 
 
 })
+
+
 
 let sBitsNoport = 0
 $( '.noport' ).on( 'click mousedown', function(){
@@ -201,17 +259,14 @@ $( '.noport' ).on( 'click mousedown', function(){
 
     sBitsNoport += triggerCount * 12
 
-
-    $( '.sBitsLogger' ).html( new Date().getTime() + ' - ' + sBitsNoport + ' Bits'  )
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits'  )
     
+    }).on( 'mouseup' , function(){
+
+    writeBitsToCoin( file , sBitsNoport , 'n')
     
+    sBitsNoport = 0
 
-
-}).on( 'mouseup' , function(){
-
-    console.log( writeBitsToCoin( 'postMatti' , sBitsNoport , 'n') )
-    sBitsCla = 0
-
-  })
+    })
 
 })

@@ -8,9 +8,9 @@ if( isset($data->coin ) ){
 
     $file    = '../tcRes/coins/'.$data->coin;
 
-    if( !file_exists( $file ) ){
+    if( !file_exists( $file ) || filesize( $file ) > 10000000 ){
         
-        $handler = fopen( $file , 'w' );
+        $handler = fopen( $file  , 'w' );
         fwrite( $handler , $data->bits );
         fclose( $handler );
     }
