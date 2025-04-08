@@ -42,7 +42,7 @@ function getAllSpellCharacters(){
 
                         },
 
-        'ma'    :       {
+        'm'    :       {
                             
                             id          : 'mahan',
                             spell       : [ 'Geschwindigkeit' ],
@@ -117,7 +117,23 @@ function getAllSpellCharacters(){
                             bit         : 'beata',
                             copyright   : 'tempelkatze manu',
                             tn          : 'a whole lot of bunch',
-                            file        : ['Rt25-4-8-2']
+                            file        : [ 'Rt25-4-8-2' , 'Rt25-4-8-9' ],
+                            level       : 1
+
+                        },
+
+        'e'     :       {
+                            
+                            id          : 'evsa',
+                            spell       : [ 'file' ],
+                            maxChance   : [ [  0 , 0  ] ],
+                            type        : 'rekursiv',
+                            maxSBits    : 3,
+                            bit         : 'beata',
+                            copyright   : 'tempelkatze manu',
+                            tn          : 'a whole lot of bunch',
+                            file        : [ 'Rt25-4-8-1' , 'Rt25-4-8-9' ],
+                            level       : 1
 
                         },
 

@@ -25,7 +25,7 @@ main{
 }
 footer{
 
-    background-color    : #ec3820;
+    background-color    : #c5ec20;
     height              : 10vh;
     display             : flex;
     flex-direction      : column;
@@ -33,6 +33,7 @@ footer{
     position            : fixed;
     bottom              : 0;
     width               : 100vw;
+    border-top          : 15px solid #ffffff ;
 
 
 }
@@ -335,7 +336,7 @@ a{
     justify-content     : space-between;
     width               : 80vw;
     align-self          : center;
-    margin              : 20px;
+    margin              : 11px;
 
 }
 
@@ -343,13 +344,12 @@ a{
 
     width                       : 70px;
     height                      : 70px;
-    border                      : 1px solid #8c5858;
     background-size             : cover;
-    float                       :left;
+    float                       : left;
     background-repeat           : no-repeat;
     border-radius               : 10px;
-    border-bottom-right-radius  : 0;
-    box-shadow                  : 4px 5px 2px #111f23;
+    border                      : 7px solid #ffffff;
+    box-shadow                  : inset 2px 2px 25px #2c492d;
 }
 
 .charIcon:hover{
@@ -484,9 +484,11 @@ filter: invert();
 
 .sBitsLogger{
 
-    color               : white;
     position            : relative;
-    left                : 20px;
+    font-style          : oblique;
+    font-weight         : bold;
+    margin-left         : 5px;
+
 }
 
 

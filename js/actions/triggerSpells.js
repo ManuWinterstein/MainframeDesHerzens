@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 const file = 'Rt25-4-8-9'
 const spells = getAllSpellCharacters()
 
+let sBitsSum = 0
+
 function callSubSpells( spell ){
 
 triggerCount = 0
@@ -48,21 +50,15 @@ function readSpellsFromCoin( coin ){
             if( i == data.length -1 ){
 
                 setTimeout( () => { $( '.onTrigger' ).removeClass( 'onTrigger jYellow jGreen jOrange jBlue jRed' ) }, 300 )
-                
-                
-
+                      
             }
 
         } 
     
-
     })
 }
 
 //------------------------------------------------------------defense/backHacks--------------------------------------------------------------------------- 
-
-
-let sBitsSum = 0
 
 const maxSBitsJos   = 3
 let sBitsJos        = 0
@@ -99,7 +95,6 @@ $( '#jos' ).on( 'click', function(){
 
 const maxSBitsHapo      = 3
 let sBitsHapo           = 0
-let sBitsHapoSum        = 0
 $( '.hapo' ).on( 'click', function(){
     
     triggerCount = 0
@@ -129,7 +124,6 @@ $( '.hapo' ).on( 'click', function(){
 
 }) 
       
-
 
 
 const maxSBitsSte   = 3
@@ -206,7 +200,6 @@ $( '.cla' ).on( 'click mousedown', function(){
 })
 
 
-
 let sBitsKev = 0
 $( '.kev' ).on( 'click mousedown', function(){
     
@@ -227,7 +220,6 @@ $( '.kev' ).on( 'click mousedown', function(){
 })
 
 
-const maxSBitsEvsa = 3
 let sBitsEvsa = 0
 $( '.evsa' ).on( 'click mousedown', function(){
     
@@ -237,17 +229,6 @@ $( '.evsa' ).on( 'click mousedown', function(){
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
     
-}).on( 'click' , function(){ 
-
-    for( let i = 0 ; i < maxSBitsEvsa ; i ++ ){
-
-        if( triggerCount < 1 )
-            $(this).click()
-        
-    }
-
-    setTimeout( null , 80 )
-
 }).on( 'mouseup' , function(){
 
     writeBitsToCoin( file , sBitsEvsa , 'e')
@@ -259,7 +240,6 @@ $( '.evsa' ).on( 'click mousedown', function(){
 })
 
 
-const maxSBitsBeat  = 1
 let sBitsBeat       = 0
 $( '.beat' ).on( 'click mousedown', function(){
     
@@ -269,18 +249,7 @@ $( '.beat' ).on( 'click mousedown', function(){
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' MBits' )
     
-})/* .on( 'click' , function(){ 
-
-    for( let i = 0 ; i < maxSBitsBeat ; i ++ ){
-
-        if( triggerCount < 1 )
-            $(this).click()
-        
-    }
-
-    setTimeout( null , 80 )
-
-}) */.on( 'mouseup' , function(){
+}).on( 'mouseup' , function(){
 
     writeBitsToCoin( file , sBitsBeat , 'b')
     
@@ -288,7 +257,7 @@ $( '.beat' ).on( 'click mousedown', function(){
 
 }) 
 
-const maxSBitsNik   = 3
+
 let sBitsNik        = 0
 $( '.nik' ).on( 'click mousedown', function(){
     
@@ -298,17 +267,6 @@ $( '.nik' ).on( 'click mousedown', function(){
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
     
-}).on( 'click' , function(){ 
-
-    for( let i = 0 ; i < maxSBitsNik ; i ++ ){
-
-        if( triggerCount < 1 )
-            $(this).click()
-        
-    }
-
-    setTimeout( null , 80 )
-
 }).on( 'mouseup' , function(){
 
     writeBitsToCoin( file , sBitsNik , 'i')
@@ -318,7 +276,6 @@ $( '.nik' ).on( 'click mousedown', function(){
     $( '.onTrigger' ).removeClass( 'onTrigger' )
 
 }) 
-
 
 
 let sBitsMahan = 0
@@ -346,43 +303,8 @@ $( '.mahan' ).on( 'click mousedown', function(){
 $( '.mar' ).on( 'mousedown', function(){
     
     readSpellsFromCoin( file )
-   /*  readBitsFromCoin( file ).then( text =>{
-
-        let data = text 
-    
-        let bits = data.length
-
-        let map = {} 
-        
-        map[ 't' ] = 'hapo' 
-        map[ 'm' ] = 'mahan' 
-        map[ 'j' ] = 'jos' 
-        map[ 'k' ] = 'kev' 
-        map[ 'n' ] = 'noport' 
-        //map[ 'c' ] = 'cla'
-        
-
-        for( let i = 0 ; i < data.length ; i++ ){
-
-            triggerCount = 2
-
-            if( map[ data[ i ] ] ){
-
-                let selector = '.'+ map[ data[ i ] ]
-
-                $( selector ).click()
-                
-            }
-
-        }
-
-        
-        
-    }) */
-    
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + readSpellsFromCoin( file ) + ' KBits' )
-
 
 })
 
