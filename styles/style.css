@@ -95,7 +95,7 @@ a{
     bottom              : 0;
 }
 
-}
+
 .subTitle.dark{
 
    color                :  rgb(69 63 63);
@@ -377,7 +377,7 @@ a{
 }
 
 
-}
+
 
 .charIcon:hover{
 
@@ -484,7 +484,7 @@ filter: invert();
 .jYellow     { background-color: rgb(255, 222, 33) }
 .jGreen      { background-color: rgb(35, 255, 108) }
 .jRed        { background-color: rgb(255, 79, 35)  }
-.jOrange    { background-color: rgb(35, 255, 226) }
+.jOrange     { background-color: rgb(252, 135, 25) }
 
 .charIcon.onTrigger{
 

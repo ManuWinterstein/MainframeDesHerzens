@@ -132,8 +132,8 @@ function getAllSpellCharacters(){
                             bit         : 'beata',
                             copyright   : 'tempelkatze manu',
                             tn          : 'a whole lot of bunch',
-                            file        : [ 'Rt25-4-8-1' , 'Rt25-4-8-9' ],
-                            level       : 1
+                            file        : [ 'Rt25-4-8-1' ],
+                            level       : 0
 
                         },
 

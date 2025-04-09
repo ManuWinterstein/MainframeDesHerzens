@@ -12,7 +12,7 @@ let sBitsSum = 0
 
 let subSpellLevel = 0
 
-function callSubSpells( spell ){
+function callSubSpells( spell , coin ){
 
 triggerCount = 0
 
@@ -28,8 +28,10 @@ colors = [ 'jYellow' , 'jGreen' , 'jOrange' , 'jBlue' , 'jRed' ]
 
     }else{
 
-        if( subSpellLevel <= spell.level){
+        if( subSpellLevel <= spell.level && spell.file[ spell.level - subSpellLevel ] != coin ){
         
+            //setTimeout( readSpellsFromCoin( spell.file[ spell.level - subSpellLevel ] ) , 90 )
+
             readSpellsFromCoin( spell.file[ spell.level - subSpellLevel ] )
 
             subSpellLevel++
@@ -52,7 +54,8 @@ function readSpellsFromCoin( coin ){
 
             if( spells[ data[ i ] ] ){
 
-                    callSubSpells( spells[ data[ i ] ] )
+                    //console.log( spells[ data[ i ] ].file , coin )
+                    callSubSpells( spells[ data[ i ] ]  )
                     sBitsSum++
 
             }
@@ -260,7 +263,7 @@ $( '.beat' ).on( 'click mousedown', function(){
 
     readSpellsFromCoin( s.file[ s.level ] )
 
-    $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' MBits' )
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' illma  ' + ' - ' + ( sBitsSum++ ) + ' MBits' )
     
 }).on( 'mouseup' , function(){
 
