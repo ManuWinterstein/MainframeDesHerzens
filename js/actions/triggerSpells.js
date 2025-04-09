@@ -5,10 +5,12 @@ verschaltbare coins synthie style
 
 *///------------------------------------------------------------helpers-------------------------------------------------------------------------------------
 
-const file = 'Rt25-4-8-9'
+const file = 'Rt25-4-8-10'
 const spells = getAllSpellCharacters()
 
 let sBitsSum = 0
+
+let subSpellLevel = 0
 
 function callSubSpells( spell ){
 
@@ -26,8 +28,13 @@ colors = [ 'jYellow' , 'jGreen' , 'jOrange' , 'jBlue' , 'jRed' ]
 
     }else{
 
-        readSpellsFromCoin( spell.file[ 0 ] )
+        if( subSpellLevel <= spell.level){
+        
+            readSpellsFromCoin( spell.file[ spell.level - subSpellLevel ] )
 
+            subSpellLevel++
+
+        }
     }  
 }
 
@@ -52,6 +59,7 @@ function readSpellsFromCoin( coin ){
 
             if( i == data.length -1 ){
 
+                subSpellLevel = 0
                 setTimeout( () => { $( '.onTrigger' ).removeClass( 'onTrigger jYellow jGreen jOrange jBlue jRed' ) }, 300 )
                       
             }
@@ -248,7 +256,9 @@ $( '.beat' ).on( 'click mousedown', function(){
     
     sBitsBeat += 8
 
-    readSpellsFromCoin( 'Rt25-4-8-8' )
+    let s = spells[ 'b' ]
+
+    readSpellsFromCoin( s.file[ s.level ] )
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' MBits' )
     
