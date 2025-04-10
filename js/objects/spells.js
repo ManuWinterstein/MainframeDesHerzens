@@ -32,7 +32,7 @@ function getAllSpellCharacters(){
         'c'     :       {
                             
                             id          : 'cla',
-                            spell       : [ 'Heil Matti' ],
+                            spell       : [ 'supernovabundle' ],
                             maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -117,8 +117,8 @@ function getAllSpellCharacters(){
                             bit         : 'beata',
                             copyright   : 'tempelkatze manu',
                             tn          : 'a whole lot of bunch',
-                            file        : [ 'Rt25-4-8-2' , 'Rt25-4-8-9' ],
-                            level       : 1
+                            file        : [ 'Rt25-4-8-2' , 'Rt25-4-8-9' , 'Rt25-4-8-10' ],
+                            level       : 2
 
                         },
 
@@ -129,10 +129,41 @@ function getAllSpellCharacters(){
                             maxChance   : [ [  0 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
-                            bit         : 'beata',
+                            bit         : 'yves',
                             copyright   : 'tempelkatze manu',
                             tn          : 'a whole lot of bunch',
-                            file        : [ 'Rt25-4-8-1' ],
+                            file        : [ 'Rt25-4-8-1' , '4-8-5' ],
+                            level       : 1
+
+                        },
+
+        'i'     :       {
+                            
+                            id          : 'evsa',
+                            spell       : [ 'file' ],
+                            maxChance   : [ [  0 , 0  ] ],
+                            type        : 'rekursiv',
+                            maxSBits    : 3,
+                            bit         : 'yves',
+                            copyright   : 'tempelkatze manu',
+                            tn          : 'a whole lot of bunch',
+                            file        : [ 'Rt25-4-8-9' ],
+                            level       : 0
+
+                        },
+                        
+
+        'x'     :       {
+                            
+                            id          : 'evsa',
+                            spell       : [ 'shut the fuck up' ],
+                            maxChance   : [ [  0 , 0  ] ],
+                            type        : 'rekursiv',
+                            maxSBits    : 3,
+                            bit         : 'yves',
+                            copyright   : 'tempelkatze manu',
+                            tn          : 'a whole lot of bunch',
+                            file        : [ 'Rt25-4-8-9' ],
                             level       : 0
 
                         },

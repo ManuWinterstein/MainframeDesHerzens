@@ -71,6 +71,12 @@ h1{
 
 }
 
+h3{
+
+    margin: 5px;
+
+}
+
 a{
 
     text-decoration: none;
@@ -392,6 +398,18 @@ outline: 2px double #17e1c6;
 filter: invert();
 
 }
+.onTrigger{ position: relative;}
+.onTrigger > scrabbleLetter{
+
+    font-size       : xx-large;
+    font-style      : oblique;
+    font-weight     : bolder;
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    padding         : 10px;
+
+}
 
 .charIcon.hapo{
 
@@ -512,6 +530,19 @@ filter: invert();
     margin              : 0 10px;
     border-radius       : 30px;
     border              : 2px solid #e7d9d9;
+}
+
+.brommbeermann{
+
+    width               : 173px;
+    height              : 274px;
+    background-image    : url(../tcRes/visual/ma/Rt2504/brommbeermann.png);
+    background-size     : contain;
+    position            : absolute;
+    bottom              : 315px;
+    left                : 40px;
+    opacity             : 0.98;
+    filter              : drop-shadow(0px -8px 8px #343a3b);
 }
 
 .sBitsLogger{

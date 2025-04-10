@@ -21,9 +21,7 @@ $( '#throwDiceButton' ).click( function(){
 
     dicings.indexOf( dT ) > 0  ?  dicings[ dicings.indexOf( dT ) ].push( dT ) : dicings.push( [ dT ] )
                       
-}).on( 'click' , function(){
-
-    $( '.scrabbleBox' ).html( new Date().getTime() )          
+}).on( 'click' , function(){        
           
         if( throwCount > 0 ){
 
@@ -34,6 +32,8 @@ $( '#throwDiceButton' ).click( function(){
 
             let j = 1
     
+            $( '#checkIntegrityValueContainer' ).append( '<h3>Handicap</h3>' )
+
             dicings.forEach( e => {
                      
                 $( '#checkIntegrityValueContainer' ).append( e + ' ° ' + getType( 'lettersLowerCase' )[ diceSynced( 16 ) % 24 ] + getType( 'lettersLowerCase' )[ diceSynced( 16 ) % 24 ] 

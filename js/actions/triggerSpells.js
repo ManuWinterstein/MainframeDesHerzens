@@ -5,14 +5,14 @@ verschaltbare coins synthie style
 
 *///------------------------------------------------------------helpers-------------------------------------------------------------------------------------
 
-const file = 'Rt25-4-8-10'
+const file = 'Rt25-4-9-2'
 const spells = getAllSpellCharacters()
 
 let sBitsSum = 0
 
 let subSpellLevel = 0
 
-function callSubSpells( spell , coin ){
+function callSubSpells( spell , coin , t ){
 
 triggerCount = 0
 
@@ -28,14 +28,14 @@ colors = [ 'jYellow' , 'jGreen' , 'jOrange' , 'jBlue' , 'jRed' ]
 
     }else{
 
-        if( subSpellLevel <= spell.level && spell.file[ spell.level - subSpellLevel ] != coin ){
+        if( subSpellLevel <= spell.level && spell.file[ spell.level - subSpellLevel ] != coin && t < getTime( 't' ) ){
         
             //setTimeout( readSpellsFromCoin( spell.file[ spell.level - subSpellLevel ] ) , 90 )
 
             readSpellsFromCoin( spell.file[ spell.level - subSpellLevel ] )
-
+           
             subSpellLevel++
-
+            
         }
     }  
 }
@@ -55,7 +55,7 @@ function readSpellsFromCoin( coin ){
             if( spells[ data[ i ] ] ){
 
                     //console.log( spells[ data[ i ] ].file , coin )
-                    callSubSpells( spells[ data[ i ] ]  )
+                    callSubSpells( spells[ data[ i ] ] , coin , getTime( 't' ) )
                     sBitsSum++
 
             }
@@ -239,7 +239,11 @@ $( '.evsa' ).on( 'click mousedown', function(){
     
     sBitsEvsa += 8
 
-    readSpellsFromCoin( 'Rt25-4-8-1' )
+    //subSpellLevel = 0
+
+    let s = spells[ 'e' ]
+
+    readSpellsFromCoin( s.file[ s.level ] )
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
     
@@ -258,6 +262,8 @@ let sBitsBeat       = 0
 $( '.beat' ).on( 'click mousedown', function(){
     
     sBitsBeat += 8
+
+    //subSpellLevel = 0
 
     let s = spells[ 'b' ]
 
@@ -278,6 +284,8 @@ let sBitsNik        = 0
 $( '.nik' ).on( 'click mousedown', function(){
     
     sBitsNik += 8
+
+    subSpellLevel = 0
 
     readSpellsFromCoin( 'Rt25-4-7-3' )
 
@@ -314,11 +322,48 @@ $( '.mahan' ).on( 'click mousedown', function(){
 
 })
 
+const maxSBitMax    = 3
+let sBitsMax        = 0
+$( '.max' ).on( 'click mousedown', function(){
+
+    triggerCount = 0
+
+    trigger( spells[ 'x' ].spell[0] , true , true )
+
+    sBitsMahan = triggerCount * 15
+
+    $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + ( sBitsSum++ ) + ' KBits' )
+
+
+}).on( 'click' , function(){ 
+
+    for( let i = 0 ; i < maxSBitMax ; i ++ ){
+
+        if( triggerCount < 1)
+            $(this).click()
+        
+    }
+
+    setTimeout( null , 80 )
+    
+}).on( 'mouseup' , function(){
+
+    writeBitsToCoin( file , sBitsMax , 'x') 
+    
+    sBitsMax = 0
+
+})
+
 
 
 $( '.mar' ).on( 'mousedown', function(){
+
+    subSpellLevel = 0
     
-    readSpellsFromCoin( file )
+    let s = spells[ 'i' ]
+
+    readSpellsFromCoin( s.file[ s.level ] )
+
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + readSpellsFromCoin( file ) + ' KBits' )
 
