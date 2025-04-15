@@ -6,7 +6,7 @@ function getAllSpellCharacters(){
         'j'  :   {
                             
                             id          : 'jos',
-                            spell       : [ 'mach doch einfach volle pulle', 'rene richter'  ],
+                            spell       : [ 'wir können es auch gleich machen', 'rene richter'  ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 56 ] ],  // 0 for infinite, 56 for 3 * 1 per week
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -32,7 +32,7 @@ function getAllSpellCharacters(){
         'c'     :       {
                             
                             id          : 'cla',
-                            spell       : [ 'supernovabundle' ],
+                            spell       : [ 'pay your depts on all spell users' , 'dynamo verloren aber noch platz 1 und noch 3 spiele' ],
                             maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -117,8 +117,8 @@ function getAllSpellCharacters(){
                             bit         : 'beata',
                             copyright   : 'tempelkatze manu',
                             tn          : 'a whole lot of bunch',
-                            file        : [ 'Rt25-4-8-2' , 'Rt25-4-8-9' , 'Rt25-4-8-10' ],
-                            level       : 2
+                            file        : [ 'Rt25-4-9-kevin_max' ],
+                            level       : 0
 
                         },
 
@@ -132,8 +132,8 @@ function getAllSpellCharacters(){
                             bit         : 'yves',
                             copyright   : 'tempelkatze manu',
                             tn          : 'a whole lot of bunch',
-                            file        : [ 'Rt25-4-8-1' , '4-8-5' ],
-                            level       : 1
+                            file        : [ 'Rt25-4-9-hapo_josie' ],
+                            level       : 0
 
                         },
 
@@ -147,7 +147,7 @@ function getAllSpellCharacters(){
                             bit         : 'yves',
                             copyright   : 'tempelkatze manu',
                             tn          : 'a whole lot of bunch',
-                            file        : [ 'Rt25-4-8-9' ],
+                            file        : [ 'Rt25-4-9-postCock2'],
                             level       : 0
 
                         },

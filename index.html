@@ -88,6 +88,7 @@
                     <input type="button" value="throwDice" class="threeFooButton azur" id="throwDiceButton"/>
                     <input type="button" value="getViewRGB" class="threeFooButton green" id="getViewRGBButton"/>
                     <input type="button" value="getViewArt" class="threeFooButton green" id="getViewArtButton"/>
+                    <!--input type="button" value="sendPush" class="threeFooButton green" id="sendPushButton"/-->
                     <!--div   class="threeFooButton green threeFooPodiContainer" id="getViewButton"><div class="threeFooPodiDot"></div></div-->
                 
                 </div>   
@@ -130,6 +131,7 @@
             <a class="charIcon ste" id="ste" ></a>
             <a class="charIcon jos" id="jos" ></a>
             <a class="charIcon noport"></a>
+            <input type="checkbox" id="checkSpellLoop"/>loop
         </div>     
         <div class="sBitsLogger"></div>
     </footer>
@@ -300,6 +302,12 @@
             $( this ).css( 'outline',' 2px solid white' )
             
         }) 
+
+        $( '#sendPushButton' ).on( 'click' , function(){
+
+            $( '.scrabbleBox' ).html( $( '.scrabbleBox' ).html() )
+
+        })
         
 
 

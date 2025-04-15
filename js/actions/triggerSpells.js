@@ -5,12 +5,14 @@ verschaltbare coins synthie style
 
 *///------------------------------------------------------------helpers-------------------------------------------------------------------------------------
 
-const file = 'Rt25-4-9-2'
+const file = 'Rt25-4-9-postCock4'
 const spells = getAllSpellCharacters()
 
 let sBitsSum = 0
 
-let subSpellLevel = 0
+let isFile          = false
+let isLooped        = false
+let subSpellLevel   = 0
 
 function callSubSpells( spell , coin , t ){
 
@@ -24,21 +26,40 @@ colors = [ 'jYellow' , 'jGreen' , 'jOrange' , 'jBlue' , 'jRed' ]
 
         let color = colors[ getRanInt( 5 ) ] 
     
-        setTimeout( () => {  $( '.' + spell.id  ).click().removeClass( 'jYellow jGreen jOrange jBlue jRed' ).addClass(  'onTrigger ' +  color ) } , 10 )
+        setTimeout( () => { isFile = true; $( '.' + spell.id  ).click().removeClass( 'jYellow jGreen jOrange jBlue jRed' ).addClass(  'onTrigger ' +  color ) } , 10 )
 
     }else{
+
+        subSpellLevel++
 
         if( subSpellLevel <= spell.level && spell.file[ spell.level - subSpellLevel ] != coin && t < getTime( 't' ) ){
         
             //setTimeout( readSpellsFromCoin( spell.file[ spell.level - subSpellLevel ] ) , 90 )
 
-            readSpellsFromCoin( spell.file[ spell.level - subSpellLevel ] )
+            
+
+            callReadSpells( spell.file[ spell.level - subSpellLevel ] )
            
-            subSpellLevel++
+            
             
         }
     }  
 }
+
+function callReadSpells( file ){
+
+    do{
+    
+        do{
+            
+            readSpellsFromCoin( file )
+
+        }while( sBitsSum == undefined )
+    
+    }while( sBitsSum == undefined )  
+
+}
+
 
 function readSpellsFromCoin( coin ){
 
@@ -62,15 +83,27 @@ function readSpellsFromCoin( coin ){
 
             if( i == data.length -1 ){
 
+                isFile = false
                 subSpellLevel = 0
                 setTimeout( () => { $( '.onTrigger' ).removeClass( 'onTrigger jYellow jGreen jOrange jBlue jRed' ) }, 300 )
-                      
-            }
+                if( isLooped &&  sBitsSum < 49 ){ //708621
 
+                    sBitsSum = 0    
+                    setTimeout( readSpellsFromCoin( coin ) , 80 )                      
+
+                }
+            }
         } 
     
     })
 }
+//---------------------------------------------------------------Loop----------------------------------------------------------------------------------
+
+$( '#checkSpellLoop' ).on( 'change' , function(){
+
+    isLooped = !isLooped
+
+})
 
 //------------------------------------------------------------defense/backHacks--------------------------------------------------------------------------- 
 
@@ -99,6 +132,7 @@ $( '#jos' ).on( 'click', function(){
 
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsJos , 'j')
     
     sBitsJos = 0
@@ -132,6 +166,7 @@ $( '.hapo' ).on( 'click', function(){
 
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsHapo , 't')
     
     sBitsHapo = 0
@@ -207,6 +242,7 @@ $( '.cla' ).on( 'click mousedown', function(){
     
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsCla , 'c')
     
     sBitsCla = 0
@@ -227,6 +263,7 @@ $( '.kev' ).on( 'click mousedown', function(){
 
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsKev , 'k')
     
     sBitsKev = 0
@@ -239,16 +276,15 @@ $( '.evsa' ).on( 'click mousedown', function(){
     
     sBitsEvsa += 8
 
-    //subSpellLevel = 0
-
     let s = spells[ 'e' ]
 
-    readSpellsFromCoin( s.file[ s.level ] )
+    callReadSpells( s.file[ s.level ] )
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
     
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsEvsa , 'e')
     
     sBitsEvsa = 0
@@ -263,16 +299,15 @@ $( '.beat' ).on( 'click mousedown', function(){
     
     sBitsBeat += 8
 
-    //subSpellLevel = 0
-
     let s = spells[ 'b' ]
 
-    readSpellsFromCoin( s.file[ s.level ] )
+    callReadSpells( s.file[ s.level ] )
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + ' illma  ' + ' - ' + ( sBitsSum++ ) + ' MBits' )
     
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsBeat , 'b')
     
     sBitsBeat = 0
@@ -285,19 +320,16 @@ $( '.nik' ).on( 'click mousedown', function(){
     
     sBitsNik += 8
 
-    subSpellLevel = 0
-
-    readSpellsFromCoin( 'Rt25-4-7-3' )
+    callReadSpells( 'Rt25-4-7-3' )
 
     $( '.sBitsLogger' ).html( getTime( 't' ) + 'illma  ' + ' - ' + ( sBitsSum++ ) + ' KBits' )
     
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsNik , 'i')
     
     sBitsNik = 0
-
-    $( '.onTrigger' ).removeClass( 'onTrigger' )
 
 }) 
 
@@ -316,6 +348,7 @@ $( '.mahan' ).on( 'click mousedown', function(){
 
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsMahan , 'm') 
     
     sBitsMahan = 0
@@ -348,6 +381,7 @@ $( '.max' ).on( 'click mousedown', function(){
     
 }).on( 'mouseup' , function(){
 
+    if( !isFile )
     writeBitsToCoin( file , sBitsMax , 'x') 
     
     sBitsMax = 0
@@ -358,13 +392,12 @@ $( '.max' ).on( 'click mousedown', function(){
 
 $( '.mar' ).on( 'mousedown', function(){
 
-    subSpellLevel = 0
+    sBitsBeat += 8
     
     let s = spells[ 'i' ]
-
-    readSpellsFromCoin( s.file[ s.level ] )
-
-
+        
+    callReadSpells( s.file[ s.level - subSpellLevel ] )
+        
     $( '.sBitsLogger' ).html( getTime( 't' ) + ' - ' + readSpellsFromCoin( file ) + ' KBits' )
 
 })
@@ -384,9 +417,10 @@ $( '.noport' ).on( 'click mousedown', function(){
     
     }).on( 'mouseup' , function(){
 
-    writeBitsToCoin( file , sBitsNoport , 'n')
+        if( !isFile )    
+        writeBitsToCoin( file , sBitsNoport , 'n')
     
-    sBitsNoport = 0
+        sBitsNoport = 0
 
     })
 
