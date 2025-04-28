@@ -170,9 +170,9 @@ function trigger( spell , pulle , margottel ){
     let tS = 'trigger'
 
     for( let i = 0; i < 3 ; i++){
-        tS += spell + pulle ? 'mach doch einfach volle pulle' : '' + margottel ? 'ich bin das margottel' : '' + 'trigger'
+        tS += spell + ( pulle ? 'mach doch einfach volle pulle' : '' + margottel ? 'ich bin das margottel' : '' + 'trigger' )
     } 
-    tS += spell + ' triggerShit '
+    tS += spell + ' pay your depts on all missleaded spellusers trigger triggerShit '
 
     triggerShit( tS , pulle , margottel )
 
