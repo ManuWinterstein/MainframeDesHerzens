@@ -19,7 +19,7 @@ function getAllSpellCharacters(){
         't'      :      {
                             
                             id          : 'hapo',
-                            spell       : [ 'frackingmode', 'fractionmode' , 'kann ni wahr sein' , 'immer widder immer widder' ],
+                            spell       : [ 'pay your depts on all missleaded spell users', 'fractionmode' , 'kann ni wahr sein' , 'immer widder immer widder' ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 0 ], [ 1 , 0 ], [ 1 , 0 ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -32,7 +32,7 @@ function getAllSpellCharacters(){
         'c'     :       {
                             
                             id          : 'cla',
-                            spell       : [ 'pay your depts on all spell users' , 'dynamo verloren aber noch platz 1 und noch 3 spiele' ],
+                            spell       : [ 'fractionmode' , 'dynamo verloren aber noch platz 1 und noch 3 spiele' ],
                             maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
