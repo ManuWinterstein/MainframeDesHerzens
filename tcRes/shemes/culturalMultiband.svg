@@ -29,12 +29,31 @@
      inkscape:cy="434.86127"
      inkscape:window-width="1904"
      inkscape:window-height="1113"
-     inkscape:window-x="161"
-     inkscape:window-y="21"
+     inkscape:window-x="-2"
+     inkscape:window-y="28"
      inkscape:window-maximized="0"
      inkscape:current-layer="g37" />
   <defs
      id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
     <linearGradient
        id="linearGradient32"
        inkscape:collect="always">
@@ -391,14 +410,14 @@
            style="font-size:16px;fill:#afdde9;fill-opacity:1">Metamoderne</tspan></text>
       <text
          xml:space="preserve"
-         style="font-size:16px;white-space:pre;inline-size:5.01331;fill:#afdde9;fill-opacity:1;stroke-width:8.60598"
+         style="font-size:16px;white-space:pre;inline-size:5.01331;display:inline;fill:#afdde9;fill-opacity:1;stroke-width:8.60598"
          x="210.61656"
          y="349.37573"
          id="text4"
          transform="translate(318,6)"><tspan
            x="210.61656"
            y="349.37573"
-           id="tspan14"><tspan
+           id="tspan15"><tspan
              dx="0 13.484375 9.7109375 9.96875 9.53125 6.828125 10.125"
              id="tspan12">Moderne</tspan></tspan></text>
       <text
@@ -427,6 +446,28 @@
              x="210.61656"
              y="349.37573"
              style="font-size:16px;fill:#afdde9;fill-opacity:1">Postmoderne</tspan></tspan></text>
+      <path
+         style="fill:#afdde9;fill-opacity:1;stroke-width:1.80283469;stroke-dasharray:none;stroke:#a1a1a1;stroke-opacity:1;marker-end:url(#Triangle)"
+         d="M 381.58767,778.04238 H 184.59923"
+         id="path14" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.65195;stroke-dasharray:none;stroke-opacity:1"
+         id="rect14"
+         width="110.26396"
+         height="17.344894"
+         x="218.05009"
+         y="769.36993" />
+      <text
+         xml:space="preserve"
+         style="font-size:16px;white-space:pre;inline-size:0;fill:#787878;fill-opacity:1;stroke:none;stroke-width:1.80283;stroke-dasharray:none;stroke-opacity:1"
+         x="236.63391"
+         y="776.80341"
+         id="text14"
+         transform="translate(16,6)"><tspan
+           id="tspan14"
+           x="236.63391"
+           y="776.80341"
+           style="fill:#787878;fill-opacity:1">Years</tspan></text>
     </g>
   </g>
 </svg>
