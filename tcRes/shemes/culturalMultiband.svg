@@ -37,6 +37,24 @@
      id="defs1">
     <marker
        style="overflow:visible"
+       id="ArrowWideHeavy"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path20" />
+    </marker>
+    <marker
+       style="overflow:visible"
        id="Triangle"
        refX="0"
        refY="0"
@@ -468,6 +486,32 @@
            x="236.63391"
            y="776.80341"
            style="fill:#787878;fill-opacity:1">Years</tspan></text>
+      <path
+         style="fill:none;fill-opacity:1;stroke:#a1a1a1;stroke-width:1.80283;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideHeavy)"
+         d="M 249.02312,744.59152 116.45857,634.32755"
+         id="path18"
+         sodipodi:nodetypes="cc" />
+      <text
+         xml:space="preserve"
+         style="font-size:12px;line-height:0;word-spacing:-0.04px;fill:none;fill-opacity:1;stroke:#a1a1a1;stroke-width:0.668976;stroke-dasharray:none;stroke-opacity:1"
+         x="48.034683"
+         y="576.80341"
+         id="text32"><tspan
+           style="font-size:12px;line-height:1.4;word-spacing:-0.04px"
+           sodipodi:role="line"
+           id="tspan81"
+           x="48.034683"
+           y="576.80341">#These:</tspan><tspan
+           style="font-size:12px;line-height:1.4;word-spacing:-0.04px"
+           sodipodi:role="line"
+           id="tspan82"
+           x="48.034683"
+           y="593.60339"> in 4 Kasten</tspan><tspan
+           sodipodi:role="line"
+           x="48.034683"
+           y="608.00342"
+           id="tspan33"
+           style="font-size:12px;line-height:1;word-spacing:-0.04px"> unterteilt</tspan></text>
     </g>
   </g>
 </svg>
