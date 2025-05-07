@@ -25,13 +25,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.80715397"
-     inkscape:cx="689.45953"
+     inkscape:cx="708.04335"
      inkscape:cy="434.86127"
-     inkscape:window-width="1920"
-     inkscape:window-height="1129"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1904"
+     inkscape:window-height="1113"
+     inkscape:window-x="161"
+     inkscape:window-y="21"
+     inkscape:window-maximized="0"
      inkscape:current-layer="g37" />
   <defs
      id="defs1">
@@ -378,6 +378,55 @@
            id="tspan31"
            x="848.89191"
            y="400.35458">Wildlife gebunden</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16px;white-space:pre;inline-size:0;fill:#afdde9;fill-opacity:1;stroke-width:8.60598"
+         x="210.61656"
+         y="349.37573"
+         id="text1"
+         transform="translate(-2,6)"><tspan
+           id="tspan1"
+           x="210.61656"
+           y="349.37573"
+           style="font-size:16px;fill:#afdde9;fill-opacity:1">Metamoderne</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16px;white-space:pre;inline-size:5.01331;fill:#afdde9;fill-opacity:1;stroke-width:8.60598"
+         x="210.61656"
+         y="349.37573"
+         id="text4"
+         transform="translate(318,6)"><tspan
+           x="210.61656"
+           y="349.37573"
+           id="tspan14"><tspan
+             dx="0 13.484375 9.7109375 9.96875 9.53125 6.828125 10.125"
+             id="tspan12">Moderne</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16px;white-space:pre;inline-size:0;fill:#afdde9;fill-opacity:1;stroke-width:8.60598"
+         x="210.61656"
+         y="349.37573"
+         id="text5"
+         transform="translate(348,6)"><tspan
+           id="tspan5"
+           x="210.61656"
+           y="349.37573"
+           style="font-size:16px;fill:#afdde9;fill-opacity:1">Moderne</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:16px;white-space:pre;inline-size:0;fill:#afdde9;fill-opacity:1;stroke-width:8.60598"
+         x="210.61656"
+         y="349.37573"
+         id="text11"
+         transform="translate(634,6)"><tspan
+           sodipodi:role="line"
+           id="tspan13"
+           x="210.61656"
+           y="349.37573"><tspan
+             id="tspan11"
+             x="210.61656"
+             y="349.37573"
+             style="font-size:16px;fill:#afdde9;fill-opacity:1">Postmoderne</tspan></tspan></text>
     </g>
   </g>
 </svg>

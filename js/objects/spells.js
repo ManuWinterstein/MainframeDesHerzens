@@ -1,3 +1,4 @@
+
 function getAllSpellCharacters(){
 
     let container 
@@ -6,7 +7,7 @@ function getAllSpellCharacters(){
         'j'  :   {
                             
                             id          : 'jos',
-                            spell       : [ 'wir können es auch gleich machen', 'rene richter'  ],
+                            spell       : [ 'rene richter', 'wir können es auch gleich machen'  ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 56 ] ],  // 0 for infinite, 56 for 3 * 1 per week
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -19,20 +20,20 @@ function getAllSpellCharacters(){
         't'      :      {
                             
                             id          : 'hapo',
-                            spell       : [ 'pay your depts on all missleaded spell users', 'fractionmode' , 'kann ni wahr sein' , 'immer widder immer widder' ],
+                            spell       : [ 'fractionmode', 'pay your depts on all missleaded spell users', 'fractionmode' , 'fractionmode' , 'kann ni wahr sein' , 'immer widder immer widder' ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 0 ], [ 1 , 0 ], [ 1 , 0 ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
                             bit         : 'tino',
                             copyright   : 'margott',
-                            tn          : 'mummelkuh , katrin r , der illi und 2 weitere'
+                            tn          : 'mummelkuh , katrin r , der illi und 4 weitere'
 
                         },
 
         'c'     :       {
                             
                             id          : 'cla',
-                            spell       : [ 'fractionmode' , 'dynamo verloren aber noch platz 1 und noch 3 spiele' ],
+                            spell       : [ 'dynamo verloren aber noch platz 1 und noch 3 spiele' ],
                             maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -97,7 +98,7 @@ function getAllSpellCharacters(){
         'n'     :       {
                             
                             id          : 'noport',
-                            spell       : [ 'rene richter' ],
+                            spell       : [ 'herzblatt' ],
                             maxChance   : [ [  0 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
