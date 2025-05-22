@@ -7,7 +7,7 @@ function getAllSpellCharacters(){
         'j'  :   {
                             
                             id          : 'jos',
-                            spell       : [ 'rene richter', 'wir können es auch gleich machen'  ],
+                            spell       : [ 'la' , 'rene richter', 'wir können es auch gleich machen'  ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 56 ] ],  // 0 for infinite, 56 for 3 * 1 per week
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -20,7 +20,7 @@ function getAllSpellCharacters(){
         't'      :      {
                             
                             id          : 'hapo',
-                            spell       : [ 'fractionmode', 'pay your depts on all missleaded spell users', 'fractionmode' , 'fractionmode' , 'kann ni wahr sein' , 'immer widder immer widder' ],
+                            spell       : [  'runde rum' , 'super mega fractionsmodus' ,'hey zicki jo yeahr hü play your position small soldier' , 'du musst in die rückstellleistung gehen', 'hey zicki jo yeahr hü play your position small soldier' ,  'pay your depts on all missleaded spell users', 'fractionmode' , 'fractionmode' , 'kann ni wahr          sein' , 'immer widder immer widder' ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 0 ], [ 1 , 0 ], [ 1 , 0 ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
