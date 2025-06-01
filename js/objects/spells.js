@@ -7,7 +7,7 @@ function getAllSpellCharacters(){
         'j'  :   {
                             
                             id          : 'jos',
-                            spell       : [ 'la' , 'rene richter', 'wir können es auch gleich machen'  ],
+                            spell       : [ 'so absurd alter' , 'rene richter', 'wir können es auch gleich machen'  ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 56 ] ],  // 0 for infinite, 56 for 3 * 1 per week
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -20,7 +20,7 @@ function getAllSpellCharacters(){
         't'      :      {
                             
                             id          : 'hapo',
-                            spell       : [  'runde rum' , 'super mega fractionsmodus' ,'hey zicki jo yeahr hü play your position small soldier' , 'du musst in die rückstellleistung gehen', 'hey zicki jo yeahr hü play your position small soldier' ,  'pay your depts on all missleaded spell users', 'fractionmode' , 'fractionmode' , 'kann ni wahr          sein' , 'immer widder immer widder' ],
+                            spell       : [ 'runde rum' , 'dresden pay your depts in the name of marcus soeeeder' , 'runde rum','la' , 'super mega fractionsmodus' ,'hey zicki jo yeahr hü play your position small soldier' , 'du musst in die rückstellleistung gehen', 'hey zicki jo yeahr hü play your position small soldier' ,  'pay your depts on all missleaded spell users', 'fractionmode' , 'fractionmode' , 'kann ni wahr          sein' , 'immer widder immer widder' ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 0 ], [ 1 , 0 ], [ 1 , 0 ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
@@ -33,7 +33,7 @@ function getAllSpellCharacters(){
         'c'     :       {
                             
                             id          : 'cla',
-                            spell       : [ 'dynamo verloren aber noch platz 1 und noch 3 spiele' ],
+                            spell       : [ 'bauschachtelwelt' ],
                             maxChance   : [ [  1 , 0  ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
