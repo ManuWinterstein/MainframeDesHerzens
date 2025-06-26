@@ -1,7 +1,7 @@
-
+ 
 function getAllSpellCharacters(){
 
-    let container 
+    let container                                                   
     return container = {
 
         'j'  :   {
@@ -20,7 +20,7 @@ function getAllSpellCharacters(){
         't'      :      {
                             
                             id          : 'hapo',
-                            spell       : [  'runde rum' , 'dresden and all theire Teilnehmer pay your depts in the name of marcus soeeeder' , 'runde rum' , 'kurzschluss bauerntheater' , 'schaffe schaffe radebeul' , 'runde rum','la' , 'super mega fractionsmodus' ,'hey zicki jo yeahr hü play your position small soldier' , 'du musst in die rückstellleistung gehen', 'hey zicki jo yeahr hü play your position small soldier' ,  'pay your depts on all missleaded spell users', 'fractionmode' , 'fractionmode' , 'kann ni wahr          sein' , 'immer widder immer widder' ],
+                            spell       : [  'mach doch einfach volle pulle' , 'runde rum' , 'fractionmode fractionmode' ,'dresden and all theire Teilnehmer pay your depts in the name of marcus soeeeder' , 'runde rum' , 'kurzschluss bauerntheater' , 'schaffe schaffe radebeul' , 'runde rum','la' , 'super mega fractionsmodus' ,'hey zicki jo yeahr hü play your position small soldier' , 'du musst in die rückstellleistung gehen', 'hey zicki jo yeahr hü play your position small soldier' ,  'pay your depts on all missleaded spell users', 'fractionmode' , 'fractionmode' , 'kann ni wahr          sein' , 'immer widder immer widder' ],
                             maxChance   : [ [  1 , 0  ], [ 1 , 0 ], [ 1 , 0 ], [ 1 , 0 ] ],
                             type        : 'rekursiv',
                             maxSBits    : 3,
